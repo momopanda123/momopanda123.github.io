@@ -23,8 +23,8 @@ navbar-links:
   About Me: "aboutme"
   Resources:
     - Deep Learning: "aboutme"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+    - Learn markdown: "aboutme"
+  Author's home: "aboutme"
 
 ################
 # --- Logo --- #

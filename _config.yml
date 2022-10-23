@@ -22,8 +22,8 @@ author: Some Person
 navbar-links:
   About Me: "aboutme"
   Resources:
-    - Deep Learning: "aboutme"
-    - Learn markdown: "aboutme"
+    - Deep Learning: "_posts/_deeplearning/sample"
+    - Learn markdown: "_posts/_deeplearning/sample"
   Author's home: "aboutme"
 
 ################

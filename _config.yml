@@ -22,7 +22,7 @@ author: Some Person
 navbar-links:
   About Me: "aboutme"
   Resources:
-    - Deep Learning: "_posts/_deeplearning/sample"
+    - Deep Learning: "aboutme"
     - Learn markdown: "https://www.markdowntutorial.com/"
   Author's home: "https://deanattali.com"
 

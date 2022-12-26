@@ -13,7 +13,7 @@
 title: PINB's graduation project blog !
 
 # Your name to show in the footer
-author: Some Person
+author: PINB
 
 ###############################################
 # --- List of links in the navigation bar --- #
@@ -98,7 +98,7 @@ social-network-links:
 
 # If you want your website to generate an RSS feed, provide a description
 # The URL for the feed will be https://<your_website>/feed.xml
-rss-description: Hello, PINBlog !
+rss-description: PINB's graduation project blog !
 
 ###########################
 # --- General options --- #
@@ -106,14 +106,14 @@ rss-description: Hello, PINBlog !
 
 # Select which social network share links to show in posts
 share-links-active:
-  twitter: true
+  twitter: false
   facebook: true
   linkedin: true
   vk: false
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "PINBlog.com"
+url-pretty: "https://pinblog.codes"
 
 # Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
 excerpt_length: 50

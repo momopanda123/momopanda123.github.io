@@ -8,14 +8,13 @@ subtitle: My Graduation Project Blog
 
 - Class of 22, Department of Industrial AI, CBNU
 - [INDAI](https://indai.cbnu.ac.kr/iai)
-- [E-mail](deanpinb@gmail.com)
+- E-mail: deanpinb@gmail.com
 - [PINBlog](https://pinblog.codes)
 - [Resume](https://resume.pinblog.codes)
 
 
 ### A Graduation Project List
 
-00. xxx
 01. xxx
 02. xxx
 03. xxx
@@ -35,3 +34,4 @@ subtitle: My Graduation Project Blog
 17. xxx
 18. xxx
 19. xxx
+20. xxx

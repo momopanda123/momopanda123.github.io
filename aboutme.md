@@ -15,23 +15,23 @@ subtitle: My Graduation Project Blog
 
 ### A Graduation Project List
 
-* 00. xxx
-* 01. xxx
-* 02. xxx
-* 03. xxx
-* 04. xxx
-* 05. xxx
-* 06. xxx
-* 07. xxx
-* 08. xxx
-* 09. xxx
-* 10. xxx
-* 11. xxx
-* 12. xxx
-* 13. xxx
-* 14. xxx
-* 15. xxx
-* 16. xxx
-* 17. xxx
-* 18. xxx
-* 19. xxx
+00. xxx
+01. xxx
+02. xxx
+03. xxx
+04. xxx
+05. xxx
+06. xxx
+07. xxx
+08. xxx
+09. xxx
+10. xxx
+11. xxx
+12. xxx
+13. xxx
+14. xxx
+15. xxx
+16. xxx
+17. xxx
+18. xxx
+19. xxx

@@ -1,16 +1,36 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: My Graduation Project Blog
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+### PINB 
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+- Class of 22, Department of Industrial AI, CBNU
+- deanpinb@gmail
+- https://pinblog.codes
+- https://resume.pinblog.codes
 
-What else do you need?
 
-### My story
+### A Graduation Project List
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+- 00. xxx
+- 01. xxx
+- 02. xxx
+- 03. xxx
+- 04. xxx
+- 05. xxx
+- 06. xxx
+- 07. xxx
+- 08. xxx
+- 09. xxx
+- 10. xxx
+- 11. xxx
+- 12. xxx
+- 13. xxx
+- 14. xxx
+- 15. xxx
+- 16. xxx
+- 17. xxx
+- 18. xxx
+- 19. xxx

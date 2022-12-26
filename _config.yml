@@ -22,7 +22,6 @@ author: PINB
 navbar-links:
   About Me: "aboutme"
   Projects:
-    - 00. xxx: "_posts/_deeplearning/sample"
     - 01. xxx: "_posts/_deeplearning/sample"
     - 02. xxx: "_posts/_deeplearning/sample"
     - 03. xxx: "_posts/_deeplearning/sample"
@@ -42,6 +41,7 @@ navbar-links:
     - 17. xxx: "_posts/_deeplearning/sample"
     - 18. xxx: "_posts/_deeplearning/sample"
     - 19. xxx: "_posts/_deeplearning/sample"
+    - 20. xxx: "_posts/_deeplearning/sample"
 #    - Learn markdown: "_posts/_deeplearning/sample"
 #  Author's home: "aboutme"
 

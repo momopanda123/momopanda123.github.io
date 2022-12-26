@@ -7,6 +7,7 @@ subtitle: My Graduation Project Blog
 ### PINB 
 
 - Class of 22, Department of Industrial AI, CBNU
+- https://indai.cbnu.ac.kr/iai
 - deanpinb@gmail
 - https://pinblog.codes
 - https://resume.pinblog.codes

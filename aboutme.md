@@ -13,7 +13,7 @@ subtitle: My Graduation Project Blog
 - [Resume](https://resume.pinblog.codes)
 
 
-### A Graduation Project List
+### Graduation Project List
 
 01. xxx
 02. xxx

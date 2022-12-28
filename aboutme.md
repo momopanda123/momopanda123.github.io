@@ -15,7 +15,7 @@ subtitle: My Graduation Project Blog
 
 ### Graduation Project List
 
-01. xxx
+01. ScreenShot OCR ... Comming Soon !
 02. xxx
 03. xxx
 04. xxx

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About me
-subtitle: My Graduation Project Blog
+subtitle: This is CBNU INDAI graduation project blog.
 ---
 
 ### PINB 

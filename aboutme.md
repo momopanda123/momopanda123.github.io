@@ -10,6 +10,7 @@ subtitle: This is CBNU INDAI graduation project blog.
 - [INDAI](https://indai.cbnu.ac.kr/iai)
 - E-mail: deanpinb@gmail.com
 - [PINBlog](https://pinblog.codes)
+- [Gitea](https://gitea.pinblog.codes)
 - [Resume](https://resume.pinblog.codes)
 
 

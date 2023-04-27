@@ -14,6 +14,7 @@ subtitle: This is CBNU INDAI graduation project blog.
 - [Resume](https://resume.pinblog.codes)
 
 
+
 ### Graduation Project List
 
 - [01. ScreenShot OCR ... Comming Soon !]() 

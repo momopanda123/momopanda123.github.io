@@ -4,38 +4,47 @@ title: 03. 지능화캡스톤 프로젝트 #1. WDI-CNN
 permalink: /_2023-04-26-wdi-cnn.html
 ---
 
-<a href="https://gitea.pinblog.codes/CBNU/03_WDI_CNN">Gitea Repository</a>
+[Gitea Repository](https://gitea.pinblog.codes/CBNU/03_WDI_CNN)
 
-<h1>지능화 캡스톤 프로젝트 #1 - WDI-CNN</h1>
-<h3><em>Wafer Map 데이터를 9종류의 Class로 분류하는 CNN 모델 만들기</em></h3>
-<hr />
-<h3>논문</h3>
-<p>반도체 제조공정의 불균형 데이터셋에 대한 웨이퍼 불량 식별을 위한 심층 컨볼루션 신경망</p>
-<ul>
-<li>
-<p>번역본
-<a href="https://gitea.pinblog.codes/attachments/9b2424f7-7e7d-4ad1-a368-86a523d67504">https://gitea.pinblog.codes/attachments/9b2424f7-7e7d-4ad1-a368-86a523d67504</a></p>
-</li>
-<li>
-<p>원본
-<a href="https://gitea.pinblog.codes/attachments/9a31bb80-bc0a-4d5a-83b1-4ef0557456ad">https://gitea.pinblog.codes/attachments/9a31bb80-bc0a-4d5a-83b1-4ef0557456ad</a></p>
-</li>
-</ul>
-<hr />
-<h3>Dataset</h3>
-<p><a href="https://www.kaggle.com/qingyi/wm811k-wafer-map/code">Kaggle - WDI Data</a></p>
-<hr />
-<h3>수행방법</h3>
-<ul>
-<li>
-<p>위 논문을 참고하여 CNN 모델을 구현하고,
-WDI Dataset을 학습하여 9개의 클래스로 분류한다.</p>
-<p>(Center, Donut, Edge-Loc, Edge-Ring, Loc, Near-full, none, Random, Scratch)</p>
-<p><a href="https://gitea.pinblog.codes/CBNU/03_WDI_CNN/releases/tag/info">https://gitea.pinblog.codes/CBNU/03_WDI_CNN/releases/tag/info</a></p>
-</li>
-</ul>
-<h1>Model</h1>
-<pre><code class="language-python">import torch
+
+# 지능화 캡스톤 프로젝트 #1 - WDI-CNN
+### *Wafer Map 데이터를 9종류의 Class로 분류하는 CNN 모델 만들기*
+
+
+-----
+
+### 논문
+반도체 제조공정의 불균형 데이터셋에 대한 웨이퍼 불량 식별을 위한 심층 컨볼루션 신경망
+
+* 번역본
+https://gitea.pinblog.codes/attachments/9b2424f7-7e7d-4ad1-a368-86a523d67504
+
+* 원본
+https://gitea.pinblog.codes/attachments/9a31bb80-bc0a-4d5a-83b1-4ef0557456ad
+
+
+-----
+
+### Dataset
+[Kaggle - WDI Data](https://www.kaggle.com/qingyi/wm811k-wafer-map/code)
+
+
+-----
+
+### 수행방법
+
+* 위 논문을 참고하여 CNN 모델을 구현하고, 
+  WDI Dataset을 학습하여 9개의 클래스로 분류한다.
+  
+  (Center, Donut, Edge-Loc, Edge-Ring, Loc, Near-full, none, Random, Scratch)
+
+  https://gitea.pinblog.codes/CBNU/03_WDI_CNN/releases/tag/info
+
+
+# Model
+
+```python
+import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
@@ -97,9 +106,12 @@ class CNN_WDI(nn.Module):
 
 cnn_wdi = CNN_WDI(class_num=9)
 
-</code></pre>
-<h1>Load Data</h1>
-<pre><code class="language-python">from torchvision import transforms, datasets
+```
+
+# Load Data
+
+```python
+from torchvision import transforms, datasets
 
 # 데이터 전처리
 rotation_angles = list(range(0, 361, 15))
@@ -118,11 +130,14 @@ data_transforms = transforms.Compose([
 train_dataset = datasets.ImageFolder(root='E:/wm_images/train/', transform=data_transforms)
 val_dataset = datasets.ImageFolder(root='E:/wm_images/val/', transform=data_transforms)
 test_dataset = datasets.ImageFolder(root='E:/wm_images/test/', transform=data_transforms)
-</code></pre>
-<h1>Settings</h1>
-<pre><code class="language-python">import torch.optim as optim
+```
 
-device = torch.device(&quot;cuda:0&quot; if torch.cuda.is_available() else &quot;cpu&quot;)
+# Settings
+
+```python
+import torch.optim as optim
+
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 cnn_wdi.to(device)
 print(str(device) + ' loaded.')
 
@@ -141,9 +156,12 @@ num_epochs = 100 #* 192
 train_max_images = 95
 val_max_images = 25
 
-</code></pre>
-<h1>Train Function</h1>
-<pre><code class="language-python"># 학습 함수 정의
+```
+
+# Train Function
+
+```python
+# 학습 함수 정의
 def train(model, dataloader, criterion, optimizer, device):
     model.train()
     running_loss = 0.0
@@ -169,9 +187,12 @@ def train(model, dataloader, criterion, optimizer, device):
     epoch_acc = running_corrects.double() / len(dataloader.dataset)
 
     return epoch_loss, epoch_acc
-</code></pre>
-<h1>Evaluate Function</h1>
-<pre><code class="language-python"># 평가 함수 정의
+```
+
+# Evaluate Function
+
+```python
+# 평가 함수 정의
 def evaluate(model, dataloader, criterion, device):
     model.eval()
     running_loss = 0.0
@@ -193,9 +214,13 @@ def evaluate(model, dataloader, criterion, device):
         epoch_acc = running_corrects.double() / len(dataloader.dataset)
 
     return epoch_loss, epoch_acc
-</code></pre>
-<h1>Train</h1>
-<pre><code class="language-python"># Train &amp; Validation의 Loss, Acc 기록 파일
+```
+
+# Train
+
+
+```python
+# Train & Validation의 Loss, Acc 기록 파일
 s_title = 'Epoch,\tTrain Loss,\tTrain Acc,\tVal Loss,\tVal Acc\n'
 with open('output.txt', 'a') as file:
     file.write(s_title)
@@ -224,14 +249,20 @@ for epoch in range(num_epochs + 1):
     if epoch % 10 == 0:
         # 모델 저장
         torch.save(cnn_wdi.state_dict(), 'CNN_WDI_' + str(epoch) + 'epoch.pth')
-</code></pre>
-<hr />
-<h3>평가방법</h3>
-<ul>
-<li>모델의 성능지표(Precision, Recall, Accuracy, F1-Score)를 혼동행렬(Confusion Metrix)로 구현한다.</li>
-</ul>
-<h1>Confusion Metrix</h1>
-<pre><code class="language-python">import numpy as np
+```
+
+
+-----
+
+### 평가방법
+
+* 모델의 성능지표(Precision, Recall, Accuracy, F1-Score)를 혼동행렬(Confusion Metrix)로 구현한다.
+
+
+# Confusion Metrix
+
+```python
+import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import classification_report, confusion_matrix
@@ -311,9 +342,12 @@ def predict_and_plot_metrics(title, model, dataloader, criterion, device):
 
     return epoch_loss, epoch_acc, report
 
-</code></pre>
-<h1>Evaluate</h1>
-<pre><code class="language-python">import os
+```
+
+# Evaluate
+
+```python
+import os
 import re
 
 test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=112, shuffle=False, num_workers=4)
@@ -335,9 +369,12 @@ for model in sorted_models:
     # Call the predict_and_plot_metrics function with the appropriate arguments
     epoch_loss, epoch_acc, report = predict_and_plot_metrics(model, cnn_wdi, test_loader, criterion, device)
     # print(f'Model: {model} Test Loss: {test_loss:.4f} Acc: {test_acc:.4f}')
-</code></pre>
-<h1>Loss Graph</h1>
-<pre><code class="language-python">import matplotlib.pyplot as plt
+```
+
+# Loss Graph
+
+```python
+import matplotlib.pyplot as plt
 
 # 파일에서 데이터를 읽어들입니다.
 with open('output.txt', 'r') as file:
@@ -375,9 +412,12 @@ plt.title('Training and Validation Loss and Accuracy')
 plt.legend()
 plt.show()
 
-</code></pre>
-<h1>Print Selecting Test Model Result</h1>
-<pre><code class="language-python">def output(model, dataloader, criterion, device):
+```
+
+# Print Selecting Test Model Result
+
+```python
+def output(model, dataloader, criterion, device):
     model.eval()
     running_loss = 0.0
     running_corrects = 0
@@ -426,7 +466,10 @@ plt.show()
 selected_model = 'CNN_WDI_20epoch.pth'
 cnn_wdi.load_state_dict(torch.load(selected_model))
 output(cnn_wdi, test_loader, criterion, device)
-</code></pre>
-<hr />
-<h3>테스트 결과</h3>
-<p><a href="https://gitea.pinblog.codes/CBNU/03_WDI_CNN/wiki/1%EC%B0%A8-%ED%85%8C%EC%8A%A4%ED%8A%B8_%EC%9B%90%EB%B3%B8-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%95%99%EC%8A%B5">1차 테스트</a></p>
+```
+
+-----
+
+### 테스트 결과
+
+[1차 테스트](https://gitea.pinblog.codes/CBNU/03_WDI_CNN/wiki/1%EC%B0%A8-%ED%85%8C%EC%8A%A4%ED%8A%B8_%EC%9B%90%EB%B3%B8-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%95%99%EC%8A%B5)

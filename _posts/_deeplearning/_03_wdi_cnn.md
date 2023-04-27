@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 03. 지능화캡스톤 프로젝트 #1. WDI-CNN
-permalink: /_2023-04-26-wdi-cnn.html
+permalink: /_03_wdi_cnn.md
 ---
 
 [Gitea Repository](https://gitea.pinblog.codes/CBNU/03_WDI_CNN)

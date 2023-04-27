@@ -19,7 +19,7 @@ subtitle: This is CBNU INDAI graduation project blog.
 01. ScreenShot OCR ... Comming Soon !
 02. xxx
  
-  [03. 지능화캡스톤 프로젝트 #1. WDI-CNN]("/_posts/_deeplearning/_03_wdi_cnn")
+  [03. 지능화캡스톤 프로젝트 #1. WDI-CNN]("/_posts/_deeplearning/_2023-04-27-wdi-cnn")
 04. xxx
 05. xxx
 06. xxx

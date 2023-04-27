@@ -16,24 +16,23 @@ subtitle: This is CBNU INDAI graduation project blog.
 
 ### Graduation Project List
 
-01. ScreenShot OCR ... Comming Soon !
-02. xxx
- 
+  [01. ScreenShot OCR ... Comming Soon !]()
+  [02. xxx]() 
   [03. 지능화캡스톤 프로젝트 #1. WDI-CNN](https://momopanda123.github.io/2023-04-27-wdi_cnn/)
-04. xxx
-05. xxx
-06. xxx
-07. xxx
-08. xxx
-09. xxx
-10. xxx
-11. xxx
-12. xxx
-13. xxx
-14. xxx
-15. xxx
-16. xxx
-17. xxx
-18. xxx
-19. xxx
-20. xxx
+  [04. xxx]()
+  [05. xxx]()
+  [06. xxx]()
+  [07. xxx]()
+  [08. xxx]()
+  [09. xxx]()
+  [10. xxx]()
+  [11. xxx]()
+  [12. xxx]()
+  [13. xxx]()
+  [14. xxx]()
+  [15. xxx]()
+  [16. xxx]()
+  [17. xxx]()
+  [18. xxx]()
+  [19. xxx]()
+  [20. xxx]()

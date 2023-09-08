@@ -22,7 +22,7 @@ author: PINB
 navbar-links:
   About Me: "aboutme"
   Projects:
-    - 01. ScreenShot OCR : "2023-04-27-wdi_cnn.md"
+    - 01. ScreenShot OCR : "2023-09-08_screenshotOCR.md"
     - 02. 풍실이 (우리집 CCTV - YOLO 이상탐지): ""
     - 03. 지능화캡스톤 프로젝트 1. WDI-CNN: "2023-04-27-wdi_cnn"
     - 04. 이미지 클러스터링 비교 분석(CNN, SVM, KNN, SOM): ""

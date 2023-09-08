@@ -23,4 +23,4 @@ Tesseract 4는 신경망 (LSTM) 기반의 OCR 엔진으로 traineddata 폴더 �
 
 ### 사용법
 
-![How_to_use.gif]([How_to_use.gif](https://gitea.pinblog.codes/CBNU/01_ScreenShotOCR/media/branch/master/How_to_use.gif)https://gitea.pinblog.codes/CBNU/01_ScreenShotOCR/media/branch/master/How_to_use.gif)
+![How_to_use.gif](https://gitea.pinblog.codes/CBNU/01_ScreenShotOCR/src/branch/master/How_to_use.gif)

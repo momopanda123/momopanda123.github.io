@@ -24,7 +24,7 @@ navbar-links:
   Projects:
     - 01. ScreenShot OCR : "2023-09-08-screenshotOCR"
     - 02. Gabor Filter: ""
-    - 03. SOM (SOFM): ""
+    - 03. SOM (SOFM): "2023-09-08-som"
     - 04. Durable Rules: ""
     - 05. Regression (Linear, Logistic): ""
     - 06. Decision Tree: ""

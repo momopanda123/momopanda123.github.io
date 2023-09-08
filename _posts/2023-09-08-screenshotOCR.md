@@ -3,6 +3,11 @@ layout: default
 title: 01. SCREENSHOT OCR
 subtitle: 모니터 화면을 캡쳐해서 원하는 영역을 ROI 설정 후, Tesseract로 OCR 변환하여 문자 출력
 ---
+-----
+
+[PINBlog Gitea Repository](https://gitea.pinblog.codes/CBNU/01_ScreenShotOCR)
+
+-----
 
 # 01. SCREENSHOT OCR
 ### [Tesseract](https://github.com/tesseract-ocr/tesseract)
@@ -13,12 +18,7 @@ Tesseract 4는 신경망 (LSTM) 기반의 OCR 엔진으로 traineddata 폴더 �
 
 - 현재 English 모델만 구성하였고, 필요에 따라서 다른 언어의 문자 인식모델들을 추가할 수 있습니다.
 
------
 
-
-[PINBlog Gitea Repository](https://gitea.pinblog.codes/CBNU/01_ScreenShotOCR)
-
------
 
 
 ### 사용법

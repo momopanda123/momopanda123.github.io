@@ -22,5 +22,5 @@ Tesseract 4는 신경망 (LSTM) 기반의 OCR 엔진으로 traineddata 폴더 �
 
 
 ### 사용법
-
+![img](/assets/img/How_to_use.gif)
 ![How_to_use](assets/img/How_to_use.gif)

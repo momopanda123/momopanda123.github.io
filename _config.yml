@@ -22,7 +22,7 @@ author: PINB
 navbar-links:
   About Me: "aboutme"
   Projects:
-	  - 01. ScreenShot OCR : "2023-09-08-screenshotOCR"
+    - 01. ScreenShot OCR : "2023-09-08-screenshotOCR"
     - 02. Gabor Filter: ""
     - 03. SOM (SOFM): ""
     - 04. Durable Rules: ""
@@ -39,7 +39,7 @@ navbar-links:
     - 15. U-Net: ""
     - 16. AutoEncoder: ""
     - 17. GAN (DCGAN, CycleGAN, StyleGAN): ""
-	  - 18. 지능화캡스톤 프로젝트 1. WDI-CNN: "2023-04-27-wdi_cnn"
+    - 18. 지능화캡스톤 프로젝트 1. WDI-CNN: "2023-04-27-wdi_cnn"
     - 19. 지능화캡스톤 프로젝트 2. YOLOv5: ""
     - 20. 창의자율과제 프로젝트(Classification, Segmentation): ""
 

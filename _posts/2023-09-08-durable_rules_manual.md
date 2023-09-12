@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 04. Durable Ruls
-subtitle: 산업인공지능 개론 과
+subtitle: 산업인공지능 개론 과목
 ---
 -----
 

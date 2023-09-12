@@ -1,69 +1,46 @@
 ---
-jupyter:
-  kernelspec:
-    display_name: Python 3
-    language: python
-    name: python3
-  language_info:
-    codemirror_mode:
-      name: ipython
-      version: 3
-    file_extension: .py
-    mimetype: text/x-python
-    name: python
-    nbconvert_exporter: python
-    pygments_lexer: ipython3
-    version: 3.10.11
-  nbformat: 4
-  nbformat_minor: 2
-  orig_nbformat: 4
+layout: default
+title: 04. Durable Ruls
+subtitle: 산업인공지능 개론 과
 ---
+-----
 
-::: {.cell .markdown tags="[]"}
+[PINBlog Gitea Repository](https://gitea.pinblog.codes/CBNU/04_durable_rules)
+
+-----
+
 # Durable Rules로 규칙 구현하기
-
--   산업인공지능학과 대학원 2022254026 김홍열
-:::
-
-::: {.cell .markdown}
+- 산업인공지능학과 대학원
+    2022254026
+        김홍열
 ### Durable Rules 란?
-
--   비즈니스 룰 엔진을 구현하기 위한 라이브러리로 python, ruby, nodejs로
-    구현할 수 있다.
-:::
-
-::: {.cell .markdown}
+* 비즈니스 룰 엔진을 구현하기 위한 라이브러리로 python, ruby, nodejs로 구현할 수 있다.
 ### Durable Rules 설치하기 (Python)
-
-\`\`\` plantext pip install durable_rules
-:::
-
-::: {.cell .markdown}
-### Durable Rules 사용법
-
+``` plantext
+pip install durable_rules
+```
+### Durable Rules Git
 [github - jruizgit/rules](https://github.com/jruizgit/rules)
-:::
 
-::: {.cell .markdown}
+
+<details>
+<summary>Durable Rules Manual</summary>
+<div markdown="1">
+
 ##### 패키지 불러오기
-:::
-
-::: {.cell .code execution_count="1"}
-``` python
+```
 from durable.lang import *
 ```
-:::
 
-::: {.cell .markdown}
-#### Rules (Trigger: \@when_all(==, &, \<\<)) {#rules-trigger-when_all--}
+# Basic
 
--   규칙은 프레임워크의 기본 구성 요소입니다.
--   규칙의 선행 조건은 규칙의 결과 조건(동작)을 실행하기 위해 충족되어야
-    하는 조건을 정의합니다.
--   관례적으로 m은 주어진 규칙에 의해 평가될 데이터를 나타냅니다.
-:::
+<details>
+<summary>Rules (Trigger: @when_all(==, &, <<))</summary>
+<div markdown="1">
 
-::: {.cell .code execution_count="2"}
+* 규칙은 프레임워크의 기본 구성 요소입니다.
+* 규칙의 선행 조건은 규칙의 결과 조건(동작)을 실행하기 위해 충족되어야 하는 조건을 정의합니다.
+* 관례적으로 m은 주어진 규칙에 의해 평가될 데이터를 나타냅니다.
 ``` python
 with ruleset('test'):
     # antecedent
@@ -71,32 +48,18 @@ with ruleset('test'):
     def say_hello(c):
         # consequent
         print ('Hello {0}'.format(c.m.subject))
-```
-:::
-
-::: {.cell .code execution_count="3"}
-``` python
 post('test', { 'subject': 'World' })
 ```
 
-::: {.output .stream .stdout}
-    Hello World
-:::
+</div>
+</details>
+<details>
+<summary>Facts (assert_fact)</summary>
+<div markdown="1">
 
-::: {.output .execute_result execution_count="3"}
-    {'sid': '0', 'id': 'sid-0', '$s': 1}
-:::
-:::
-
-::: {.cell .markdown}
-#### Facts (assert_fact)
-
--   사실은 지식 기반을 정의하는 데이터를 나타냅니다.
--   사실은 JSON 객체로 주장되며, 취소될 때까지 저장됩니다.
--   사실이 규칙의 선행 조건을 만족하면, 규칙의 결과 조건이 실행됩니다.
-:::
-
-::: {.cell .code execution_count="4"}
+* 사실은 지식 기반을 정의하는 데이터를 나타냅니다.
+* 사실은 JSON 객체로 주장되며, 취소될 때까지 저장됩니다.
+* 사실이 규칙의 선행 조건을 만족하면, 규칙의 결과 조건이 실행됩니다.
 ``` python
 with ruleset('animal'):
     # will be triggered by 'Kermit eats flies'
@@ -120,36 +83,19 @@ with ruleset('animal'):
     @when_all(+m.subject)
     def output(c):
         print('Fact: {0} {1} {2}'.format(c.m.subject, c.m.predicate, c.m.object))
-```
-:::
-
-::: {.cell .code execution_count="5"}
-``` python
 assert_fact('animal', { 'subject': 'Kermit', 'predicate': 'eats', 'object': 'flies' })
 ```
 
-::: {.output .stream .stdout}
-    Fact: Kermit is green
-    Fact: Kermit is frog
-    Fact: Kermit eats flies
-:::
+</div>
+</details>
+<details>
+<summary>Events (post)</summary>
+<div markdown="1">
 
-::: {.output .execute_result execution_count="5"}
-    {'sid': '0', 'id': 'sid-0', '$s': 1}
-:::
-:::
-
-::: {.cell .markdown}
-#### Events (post)
-
--   이벤트는 규칙에 전달되어 평가될 수 있습니다.
--   이벤트란 일시적인 사실로, 결과를 실행하기 직전에 취소되는
-    사실입니다.
--   따라서 이벤트는 한 번만 관찰할 수 있습니다.
--   이벤트는 관찰될 때까지 저장됩니다.
-:::
-
-::: {.cell .code execution_count="2"}
+* 이벤트는 규칙에 전달되어 평가될 수 있습니다. 
+* 이벤트란 일시적인 사실로, 결과를 실행하기 직전에 취소되는 사실입니다.
+* 따라서 이벤트는 한 번만 관찰할 수 있습니다.
+* 이벤트는 관찰될 때까지 저장됩니다.
 ``` python
 with ruleset('risk'):
     @when_all(c.first << m.t == 'purchase',
@@ -157,75 +103,35 @@ with ruleset('risk'):
     # the event pair will only be observed once
     def fraud(c):
         print('Fraud detected -> {0}, {1}'.format(c.first.location, c.second.location))
-```
-:::
-
-::: {.cell .code execution_count="3"}
-``` python
 post('risk', {'t': 'purchase', 'location': 'US'})
 post('risk', {'t': 'purchase', 'location': 'CA'})
 ```
-
-::: {.output .stream .stdout}
-    Fraud detected -> CA, US
-:::
-
-::: {.output .execute_result execution_count="3"}
-    {'sid': '0', 'id': 'sid-0', '$s': 1}
-:::
-:::
-
-::: {.cell .markdown}
-##### ✨위 예제에서 Event가 아닌 Fact를 적용하면 다음과 같이 출력됩니다. {#위-예제에서-event가-아닌-fact를-적용하면-다음과-같이-출력됩니다}
-:::
-
-::: {.cell .code execution_count="3"}
+##### ✨위 예제에서 Event가 아닌 Fact를 적용하면 다음과 같이 출력됩니다.
 ``` python
 assert_fact('risk', {'t': 'purchase', 'location': 'US', 'last_location': None})
 assert_fact('risk', {'t': 'purchase', 'location': 'CA', 'last_location': None})
 ```
-
-::: {.output .stream .stdout}
-    Fraud detected -> CA, US
-    Fraud detected -> US, CA
-:::
-
-::: {.output .execute_result execution_count="3"}
-    {'sid': '0', 'id': 'sid-0', '$s': 1}
-:::
-:::
-
-::: {.cell .markdown}
 ``` plaintext
 Fraud detected -> US, CA
 Fraud detected -> CA, US
 ```
-:::
+예에서 두 가지 사실 모두 첫 번째 조건인 m.t == 'purchase'를 충족하며, 각 사실은 첫 번째 조건을 충족한 사실과 관련하여 두 번째 조건인 m.location != c.first.location을 충족합니다.
 
-::: {.cell .markdown}
-예에서 두 가지 사실 모두 첫 번째 조건인 m.t == \'purchase\'를 충족하며,
-각 사실은 첫 번째 조건을 충족한 사실과 관련하여 두 번째 조건인
-m.location != c.first.location을 충족합니다.
+이벤트는 일시적인 사실입니다. 사실이 발송될 예정이라면 즉시 취소됩니다. 위 예제에서 post를 사용할 때, 두 번째 쌍이 계산되는 시점에 이미 이벤트가 취소되어 있습니다.
 
-이벤트는 일시적인 사실입니다. 사실이 발송될 예정이라면 즉시 취소됩니다.
-위 예제에서 post를 사용할 때, 두 번째 쌍이 계산되는 시점에 이미 이벤트가
-취소되어 있습니다.
+발송 전에 이벤트를 취소함으로써 작업 실행 중 계산해야 할 조합의 수를 줄일 수 있습니다.
 
-발송 전에 이벤트를 취소함으로써 작업 실행 중 계산해야 할 조합의 수를
-줄일 수 있습니다.
-:::
+</div>
+</details>
+<details>
+<summary>State (s, update_state)</summary>
+<div markdown="1">
 
-::: {.cell .markdown}
-#### State (s, update_state)
-
--   규칙의 결과가 실행될 때 컨텍스트 상태를 사용할 수 있습니다.
--   동일한 컨텍스트 상태는 규칙 실행 간에 전달됩니다.
--   컨텍스트 상태는 삭제될 때까지 저장됩니다.
--   컨텍스트 상태 변경은 규칙에 의해 평가될 수 있습니다.
--   관례적으로 s는 규칙에 의해 평가되는 상태를 나타냅니다.
-:::
-
-::: {.cell .code execution_count="2"}
+* 규칙의 결과가 실행될 때 컨텍스트 상태를 사용할 수 있습니다. 
+* 동일한 컨텍스트 상태는 규칙 실행 간에 전달됩니다. 
+* 컨텍스트 상태는 삭제될 때까지 저장됩니다. 
+* 컨텍스트 상태 변경은 규칙에 의해 평가될 수 있습니다. 
+* 관례적으로 s는 규칙에 의해 평가되는 상태를 나타냅니다.
 ``` python
 with ruleset('flow'):
     # state condition uses 's'
@@ -246,31 +152,17 @@ with ruleset('flow'):
         print('last')
         # deletes state at the end
         c.delete_state()
-```
-:::
-
-::: {.cell .code execution_count="3"}
-``` python
 update_state('flow', { 'status': 'start' })
 ```
 
-::: {.output .stream .stdout}
-    start
-    next
-    last
-:::
-:::
+</div>
+</details>
+<details>
+<summary>Identity (+속성, none(+속성))</summary>
+<div markdown="1">
 
-::: {.cell .markdown}
-#### Identity (+속성, none(+속성))
-
--   같은 속성 이름과 값이 있는 팩트들은 단언(asserted)되거나
-    철회(retracted)될 때 동등하다고 간주됩니다.
--   같은 속성 이름과 값이 있는 이벤트들은 게시 시간이 중요하기 때문에
-    게시될 때 서로 다른 것으로 간주됩니다.
-:::
-
-::: {.cell .code execution_count="2"}
+* 같은 속성 이름과 값이 있는 팩트들은 단언(asserted)되거나 철회(retracted)될 때 동등하다고 간주됩니다.
+* 같은 속성 이름과 값이 있는 이벤트들은 게시 시간이 중요하기 때문에 게시될 때 서로 다른 것으로 간주됩니다.
 ``` python
 with ruleset('bookstore'):
     # this rule will trigger for events with status
@@ -286,33 +178,19 @@ with ruleset('bookstore'):
     @when_all(none(+m.name))
     def empty(c):
         print('bookstore-> No books')
-
 ```
-:::
-
-::: {.cell .code execution_count="3"}
 ``` python
 # 단언(assert_fact)이 성공했기 때문에 예외를 발생시키지 않습니다. 
+
 assert_fact('bookstore', {
     'name': 'The new book',
     'seller': 'bookstore',
     'reference': '75323',
     'price': 500
 })
-```
 
-::: {.output .stream .stdout}
-    bookstore-> Added The new book
-:::
-
-::: {.output .execute_result execution_count="3"}
-    {'sid': '0', 'id': 'sid-0', '$s': 1}
-:::
-:::
-
-::: {.cell .code execution_count="4"}
-``` python
 # 이미 단언(assert_fact)된 사실이기 때문에 MessageObservedError가 발생합니다. 
+
 try:
     assert_fact('bookstore', {
         'reference': '75323',
@@ -322,34 +200,16 @@ try:
     })
 except BaseException as e:
     print('bookstore expected {0}'.format(e.message))
-```
 
-::: {.output .stream .stdout}
-    bookstore expected Message has already been observed: {"reference": "75323", "name": "The new book", "price": 500, "seller": "bookstore"}
-:::
-:::
-
-::: {.cell .code execution_count="8"}
-``` python
 # 새로운 이벤트가 게시되기 때문에 예외를 발생시키지 않습니다. 
+
 post('bookstore', {
     'reference': '75323',
     'status': 'Active'
 })
-```
 
-::: {.output .stream .stdout}
-    bookstore-> Reference 75323 status Active
-:::
-
-::: {.output .execute_result execution_count="8"}
-    {'sid': '0', 'id': 'sid-0', '$s': 1}
-:::
-:::
-
-::: {.cell .code execution_count="7"}
-``` python
 # 새로운 이벤트가 게시되기 때문에 예외를 발생시키지 않습니다.
+
 post('bookstore', {
     'reference': '75323',
     'status': 'Active'
@@ -363,41 +223,16 @@ retract_fact('bookstore', {
 })
 ```
 
-::: {.output .stream .stdout}
-    bookstore-> Reference 75323 status Active
-:::
-:::
+</div>
+</details>
+<details>
+<summary>Correlated Sequence</summary>
+<div markdown="1">
 
-::: {.cell .markdown}
-#### Pattern Matching
-:::
-
-::: {.cell .markdown}
-#### String Operations
-:::
-
-::: {.cell .markdown}
-#### Correlated Sequence
-
--   규칙은 서로 관련된 이벤트 또는 사실의 시퀀스를 효율적으로 평가하는
-    데 사용할 수 있습니다. 아래 예시의 사기 탐지 규칙은 세 가지 이벤트
-    패턴을 보여줍니다: 두 번째 이벤트 금액이 첫 번째 이벤트 금액의
-    200%를 초과하고 세 번째 이벤트 금액이 다른 두 이벤트의 평균보다
-    큽니다.
--   기본적으로 관련된 시퀀스는 서로 다른 메시지를 캡처합니다. 아래
-    예시에서 두 번째 이벤트는 두 번째와 세 번째 조건을 모두 만족하지만,
-    이벤트는 두 번째 조건에 대해서만 캡처됩니다. distinct 속성을
-    사용하여 서로 다른 이벤트 또는 사실의 상관 관계를 비활성화할 수
-    있습니다.
--   when_all 주석은 이벤트 또는 사실의 시퀀스를 표현합니다. \<\<
-    연산자는 이후 표현식에서 참조할 수 있는 이벤트 또는 사실의 이름을
-    지정하는 데 사용됩니다. 이벤트 또는 사실을 참조할 때 모든 속성을
-    사용할 수 있습니다. 산술 연산자를 사용하여 복잡한 패턴을 표현할 수
-    있습니다.
--   산술 연산자: +, -, \*, /
-:::
-
-::: {.cell .code execution_count="4"}
+* 규칙은 서로 관련된 이벤트 또는 사실의 시퀀스를 효율적으로 평가하는 데 사용할 수 있습니다. 아래 예시의 사기 탐지 규칙은 세 가지 이벤트 패턴을 보여줍니다: 두 번째 이벤트 금액이 첫 번째 이벤트 금액의 200%를 초과하고 세 번째 이벤트 금액이 다른 두 이벤트의 평균보다 큽니다.
+* 기본적으로 관련된 시퀀스는 서로 다른 메시지를 캡처합니다. 아래 예시에서 두 번째 이벤트는 두 번째와 세 번째 조건을 모두 만족하지만, 이벤트는 두 번째 조건에 대해서만 캡처됩니다. distinct 속성을 사용하여 서로 다른 이벤트 또는 사실의 상관 관계를 비활성화할 수 있습니다.
+* when_all 주석은 이벤트 또는 사실의 시퀀스를 표현합니다. << 연산자는 이후 표현식에서 참조할 수 있는 이벤트 또는 사실의 이름을 지정하는 데 사용됩니다. 이벤트 또는 사실을 참조할 때 모든 속성을 사용할 수 있습니다. 산술 연산자를 사용하여 복잡한 패턴을 표현할 수 있습니다.
+* 산술 연산자: +, -, *, /
 ``` python
 from durable.lang import *
 
@@ -416,35 +251,19 @@ post('risk', { 'amount': 200 })
 post('risk', { 'amount': 251 })
 ```
 
-::: {.output .stream .stdout}
-    fraud detected -> 50
-                   -> 251
-                   -> 200
-:::
+</div>
+</details>
+<details>
+<summary>Choice of Sequences</summary>
+<div markdown="1">
 
-::: {.output .execute_result execution_count="4"}
-    {'sid': '0', 'id': 'sid-0', '$s': 1}
-:::
-:::
+* durable_rules는 보다 풍부한 이벤트 시퀀스를 표현하고 효율적으로 평가할 수 있게 해줍니다. 아래 예시에서 두 이벤트\사실 시퀀스 각각이 동작을 실행합니다.
 
-::: {.cell .markdown}
-#### Choice of Sequences
+* 다음 두 함수는 더 풍부한 이벤트 시퀀스를 정의하는 데 사용되고 결합할 수 있습니다:
 
--   durable_rules는 보다 풍부한 이벤트 시퀀스를 표현하고 효율적으로
-    평가할 수 있게 해줍니다. 아래 예시에서 두 이벤트\\사실 시퀀스 각각이
-    동작을 실행합니다.
+all: 이벤트 또는 사실 패턴의 집합입니다. 동작을 실행하려면 모든 패턴이 일치해야 합니다.
 
--   다음 두 함수는 더 풍부한 이벤트 시퀀스를 정의하는 데 사용되고 결합할
-    수 있습니다:
-
-all: 이벤트 또는 사실 패턴의 집합입니다. 동작을 실행하려면 모든 패턴이
-일치해야 합니다.
-
-any: 이벤트 또는 사실 패턴의 집합입니다. 어느 하나만 일치해도 동작이
-실행됩니다.
-:::
-
-::: {.cell .code execution_count="8"}
+any: 이벤트 또는 사실 패턴의 집합입니다. 어느 하나만 일치해도 동작이 실행됩니다.
 ``` python
 from durable.lang import *
 
@@ -466,28 +285,15 @@ post('expense', { 'subject': 'jumbo' })
 post('expense', { 'amount': 10000 })
 ```
 
-::: {.output .stream .stdout}
-    Approved approve 1000
-    Approved jumbo 10000
-:::
+</div>
+</details>
+<details>
+<summary>Lack of Information</summary>
+<div markdown="1">
 
-::: {.output .execute_result execution_count="8"}
-    {'sid': '0', 'id': 'sid-0', '$s': 1}
-:::
-:::
+* 일부 경우에는 정보 부족이 중요한 의미를 가집니다. none 함수는 관련된 시퀀스가 있는 규칙에서 정보 부족을 평가하는 데 사용할 수 있습니다.
 
-::: {.cell .markdown}
-#### Lack of Information
-
--   일부 경우에는 정보 부족이 중요한 의미를 가집니다. none 함수는 관련된
-    시퀀스가 있는 규칙에서 정보 부족을 평가하는 데 사용할 수 있습니다.
-
--   참고: none 함수는 정보 부족에 대한 추론을 위해 정보가 필요합니다.
-    즉, 해당 규칙에 이벤트나 사실이 등록되지 않은 경우에는 동작을
-    실행하지 않습니다.
-:::
-
-::: {.cell .code execution_count="1"}
+* 참고: none 함수는 정보 부족에 대한 추론을 위해 정보가 필요합니다. 즉, 해당 규칙에 이벤트나 사실이 등록되지 않은 경우에는 동작을 실행하지 않습니다.
 ``` python
 from durable.lang import *
 
@@ -510,24 +316,14 @@ assert_fact('risk', { 'sid': 1, 't': 'chargeback' })
 retract_fact('risk', { 'sid': 1, 't': 'balance' })
 ```
 
-::: {.output .stream .stdout}
-    fraud detected deposit withdrawal chargeback
-    fraud detected deposit withdrawal chargeback
-:::
+</div>
+</details>
+<details>
+<summary>Nested Objects</summary>
+<div markdown="1">
 
-::: {.output .execute_result execution_count="1"}
-    {'sid': '1', 'id': 'sid-1', '$s': 1}
-:::
-:::
-
-::: {.cell .markdown}
-#### Nested OBjects
-
--   중첩된 이벤트 또는 사실에 대한 질의도 지원됩니다.
--   . 표기법은 중첩된 객체의 속성에 대한 조건을 정의하는 데 사용됩니다.
-:::
-
-::: {.cell .code execution_count="2"}
+* 중첩된 이벤트 또는 사실에 대한 질의도 지원됩니다.
+* . 표기법은 중첩된 객체의 속성에 대한 조건을 정의하는 데 사용됩니다.
 ``` python
 from durable.lang import *
 
@@ -538,29 +334,20 @@ with ruleset('expense'):
     def approved(c):
         print ('bill amount  ->{0}'.format(c.bill.invoice.amount))
         print ('account payment amount ->{0}'.format(c.account.payment.invoice.amount))
-            
+```       
+``` python
 # one level of nesting
 post('expense', {'t': 'bill', 'invoice': {'amount': 100}})
-        
-#two levels of nesting
+# two levels of nesting
 post('expense', {'t': 'account', 'payment': {'invoice': {'amount': 100}}})
 ```
 
-::: {.output .stream .stdout}
-    bill amount  ->100
-    account payment amount ->100
-:::
+</div>
+</details>
+<details>
+<summary>Arrays</summary>
+<div markdown="1">
 
-::: {.output .execute_result execution_count="2"}
-    {'sid': '0', 'id': 'sid-0', '$s': 1}
-:::
-:::
-
-::: {.cell .markdown}
-#### Arrays
-:::
-
-::: {.cell .code execution_count="1"}
 ``` python
 from durable.lang import *
 
@@ -591,26 +378,13 @@ post('risk', {'cards': [ 'one card', 'two cards', 'three cards' ]})
 post('risk', {'payments': [ [ 10, 20, 30 ], [ 30, 40, 50 ], [ 10, 20 ] ]}) 
 ```
 
-::: {.output .stream .stdout}
-    fraud 1 detected [150, 300, 450]
-    fraud 2 detected [{'amount': 200}, {'amount': 300}, {'amount': 450}]
-    fraud 3 detected ['one card', 'two cards', 'three cards']
-    fraud 4 detected [[10, 20, 30], [30, 40, 50], [10, 20]]
-:::
+</div>
+</details>
+<details>
+<summary>Facts and Events as rvalues</summary>
+<div markdown="1">
 
-::: {.output .execute_result execution_count="1"}
-    {'sid': '0', 'id': 'sid-0', '$s': 1}
-:::
-:::
-
-::: {.cell .markdown}
-#### Facts and Events as rvalues
-
--   스칼라 값(문자열, 숫자 및 부울 값) 외에도 표현식의 오른쪽에서 관찰된
-    사실이나 이벤트를 사용할 수 있습니다.
-:::
-
-::: {.cell .code}
+* 스칼라 값(문자열, 숫자 및 부울 값) 외에도 표현식의 오른쪽에서 관찰된 사실이나 이벤트를 사용할 수 있습니다.
 ``` python
 from durable.lang import *
 
@@ -632,24 +406,19 @@ post('risk', { 'debit': 150, 'credit': 100 })
 post('risk', { 'amount': 200 })
 post('risk', { 'amount': 500 })
 ```
-:::
 
-::: {.cell .markdown}
+</div>
+</details>
+
 # Consequents
-:::
 
-::: {.cell .markdown}
-#### Conflict Resolution
+<details>
+<summary>Conflict Resolution</summary>
+<div markdown="1">
 
--   이벤트와 사실 평가는 여러 결과를 초래할 수 있습니다. pri (중요도)
-    함수를 사용하여 트리거 순서를 제어할 수 있습니다. 낮은 값의 작업이
-    먼저 실행됩니다. 모든 작업의 기본값은 0입니다.
+* 이벤트와 사실 평가는 여러 결과를 초래할 수 있습니다. pri (중요도) 함수를 사용하여 트리거 순서를 제어할 수 있습니다. 낮은 값의 작업이 먼저 실행됩니다. 모든 작업의 기본값은 0입니다.
 
--   이 예시에서, 마지막 규칙이 가장 높은 우선순위를 가지고 있으므로 먼저
-    트리거됩니다.
-:::
-
-::: {.cell .code execution_count="2"}
+* 이 예시에서, 마지막 규칙이 가장 높은 우선순위를 가지고 있으므로 먼저 트리거됩니다.
 ``` python
 from durable.lang import *
 
@@ -671,36 +440,19 @@ assert_fact('attributes', { 'amount': 150 })
 assert_fact('attributes', { 'amount': 250 })
 ```
 
-::: {.output .stream .stdout}
-    attributes P1 ->50
-    attributes P2 ->50
-    attributes P3 ->50
-    attributes P2 ->150
-    attributes P3 ->150
-    attributes P3 ->250
-:::
+</div>
+</details>
+<details>
+<summary>Action Batches</summary>
+<div markdown="1">
 
-::: {.output .execute_result execution_count="2"}
-    {'sid': '0', 'id': 'sid-0', '$s': 1}
-:::
-:::
+* 많은 수의 이벤트 또는 사실이 결과를 만족시킬 때, 결과는 일괄적으로 전달될 수 있습니다.
 
-::: {.cell .markdown}
-#### Action Batches
-
--   많은 수의 이벤트 또는 사실이 결과를 만족시킬 때, 결과는 일괄적으로
-    전달될 수 있습니다.
-
-count: 동작을 예약하기 전에 규칙이 만족해야 하는 정확한 횟수를
-정의합니다.
+count: 동작을 예약하기 전에 규칙이 만족해야 하는 정확한 횟수를 정의합니다.
 
 cap: 동작을 예약하기 전에 규칙이 만족해야 하는 최대 횟수를 정의합니다.
 
--   이 예시는 정확히 세 개의 승인을 일괄 처리하고 거절 수를 두 개로
-    제한합니다:
-:::
-
-::: {.cell .code execution_count="3"}
+* 이 예시는 정확히 세 개의 승인을 일괄 처리하고 거절 수를 두 개로 제한합니다:
 ``` python
 from durable.lang import *
 
@@ -726,28 +478,16 @@ post_batch('expense', [{ 'amount': 10 },
 assert_fact('expense', { 'review': True })
 ```
 
-::: {.output .stream .stdout}
-    approved [{'amount': 30}, {'amount': 20}, {'amount': 10}]
-    rejected [{'expense': {'amount': 400}, 'approval': {'review': True}}, {'expense': {'amount': 200}, 'approval': {'review': True}}]
-    rejected [{'expense': {'amount': 100}, 'approval': {'review': True}}]
-:::
+</div>
+</details>
+<details>
+<summary>Async Actions</summary>
+<div markdown="1">
 
-::: {.output .execute_result execution_count="3"}
-    {'sid': '0', 'id': 'sid-0', '$s': 1}
-:::
-:::
-
-::: {.cell .markdown}
-#### Async Actions
-
--   결과 동작은 비동기적일 수 있습니다.
--   동작이 완료되면 완료(complete) 함수를 호출해야 합니다.
--   기본적으로 동작은 5초 후에 포기된 것으로 간주됩니다.
--   이 값은 작업 함수에서 다른 숫자를 반환하거나 renew_action_lease를
-    호출함으로써 변경할 수 있습니다.
-:::
-
-::: {.cell .code execution_count="1"}
+* 결과 동작은 비동기적일 수 있습니다. 
+* 동작이 완료되면 완료(complete) 함수를 호출해야 합니다. 
+* 기본적으로 동작은 5초 후에 포기된 것으로 간주됩니다. 
+* 이 값은 작업 함수에서 다른 숫자를 반환하거나 renew_action_lease를 호출함으로써 변경할 수 있습니다.
 ``` python
 from durable.lang import *
 import threading
@@ -790,21 +530,14 @@ with ruleset('flow'):
 update_state('flow', { 'state': 'first' })
 ```
 
-::: {.output .stream .stdout}
-    first completed
-    second completed
-:::
-:::
+</div>
+</details>
+<details>
+<summary>Unhandled Exceptions</summary>
+<div markdown="1">
 
-::: {.cell .markdown}
-#### Unhandled Exceptions
-
--   액션에서 예외가 처리되지 않은 경우, 예외는 컨텍스트 상태에
-    저장됩니다.
--   이를 통해 예외 처리 규칙을 작성할 수 있습니다.
-:::
-
-::: {.cell .code execution_count="1"}
+* 액션에서 예외가 처리되지 않은 경우, 예외는 컨텍스트 상태에 저장됩니다. 
+* 이를 통해 예외 처리 규칙을 작성할 수 있습니다.
 ``` python
 from durable.lang import *
 
@@ -822,40 +555,27 @@ with ruleset('flow'):
             
 post('flow', { 'action': 'start' })
 ```
+</div>
+</details>
 
-::: {.output .stream .stdout}
-    exception caught Unhandled Exception!, traceback ['  File "/config/.local/lib/python3.10/site-packages/durable/engine.py", line 241, in run\n    self._func(c)\n', '  File "/tmp/ipykernel_18661/3255112604.py", line 7, in first\n    raise Exception(\'Unhandled Exception!\')\n']
-:::
+# Flow Structures
 
-::: {.output .execute_result execution_count="1"}
-    {'sid': '0', 'id': 'sid-0', '$s': 1}
-:::
-:::
+<details>
+<summary>Statechart</summary>
+<div markdown="1">
 
-::: {.cell .markdown}
-### Flow Structures
-:::
+* 규칙은 상태도(statecharts)를 사용하여 구성할 수 있습니다. 상태도는 결정적 유한 오토마타(DFA)입니다. 상태 컨텍스트는 가능한 여러 상태 중 하나에 있으며, 이러한 상태 간에 조건부 전환을 가집니다.
 
-::: {.cell .markdown}
-#### Statechart
+* 상태도 규칙:
 
--   규칙은 상태도(statecharts)를 사용하여 구성할 수 있습니다. 상태도는
-    결정적 유한 오토마타(DFA)입니다. 상태 컨텍스트는 가능한 여러 상태 중
-    하나에 있으며, 이러한 상태 간에 조건부 전환을 가집니다.
-
--   상태도 규칙:
-
-1.  상태도는 하나 이상의 상태를 가질 수 있습니다.
-2.  상태도에는 초기 상태가 필요합니다.
-3.  초기 상태는 들어오는 간선이 없는 정점으로 정의됩니다.
-4.  상태는 0개 이상의 트리거를 가질 수 있습니다.
-5.  상태는 0개 이상의 상태를 가질 수 있습니다 (중첩 상태 참조).
-6.  트리거에는 목적지 상태가 있습니다.
-7.  트리거는 규칙을 가질 수 있습니다 (부재는 상태 진입을 의미).
-8.  트리거는 액션을 가질 수 있습니다.
-:::
-
-::: {.cell .code execution_count="1"}
+1. 상태도는 하나 이상의 상태를 가질 수 있습니다.
+2. 상태도에는 초기 상태가 필요합니다.
+3. 초기 상태는 들어오는 간선이 없는 정점으로 정의됩니다.
+4. 상태는 0개 이상의 트리거를 가질 수 있습니다.
+5. 상태는 0개 이상의 상태를 가질 수 있습니다 (중첩 상태 참조).
+6. 트리거에는 목적지 상태가 있습니다.
+7. 트리거는 규칙을 가질 수 있습니다 (부재는 상태 진입을 의미).
+8. 트리거는 액션을 가질 수 있습니다.
 ``` python
 from durable.lang import *
 
@@ -902,29 +622,15 @@ post('expense', { 'sid': 1, 'subject': 'denied' })
 post('expense', { 'sid': 2, 'subject': 'approve', 'amount': 10000 })
 ```
 
-::: {.output .stream .stdout}
-    requesting approve amount 100
-:::
+</div>
+</details>
+<details>
+<summary>Nested States</summary>
+<div markdown="1">
 
-::: {.output .execute_result execution_count="1"}
-    {'sid': '0', 'id': 'sid-0', '$s': 1, 'running': True}
-:::
-:::
-
-::: {.cell .markdown}
-### Nested States
-:::
-
-::: {.cell .markdown}
--   중첩 상태를 사용하면 컴팩트한 상태도를 작성할 수 있습니다.
--   컨텍스트가 중첩 상태에 있는 경우, 컨텍스트는 묵시적으로 주변
-    상태에도 있습니다.
--   상태도는 하위 상태 컨텍스트에서 모든 이벤트를 처리하려고 시도합니다.
-    \* 하위 상태가 이벤트를 처리하지 않으면, 이벤트는 자동으로 상위 상태
-    컨텍스트에서 처리됩니다.
-:::
-
-::: {.cell .code execution_count="3"}
+* 중첩 상태를 사용하면 컴팩트한 상태도를 작성할 수 있습니다. 
+* 컨텍스트가 중첩 상태에 있는 경우, 컨텍스트는 묵시적으로 주변 상태에도 있습니다. 
+* 상태도는 하위 상태 컨텍스트에서 모든 이벤트를 처리하려고 시도합니다. * 하위 상태가 이벤트를 처리하지 않으면, 이벤트는 자동으로 상위 상태 컨텍스트에서 처리됩니다.
 ``` python
 from durable.lang import *
 
@@ -963,38 +669,22 @@ post('worker', { 'subject': 'continue' })
 post('worker', { 'subject': 'cancel' })
 ```
 
-::: {.output .stream .stdout}
-    start process
-    continue processing
-    continue processing
-    cancel process
-:::
+</div>
+</details>
+<details>
+<summary>Flowchart</summary>
+<div markdown="1">
 
-::: {.output .execute_result execution_count="3"}
-    {'sid': '0', 'id': 'sid-0', '$s': 1, 'running': True}
-:::
-:::
+* 플로우차트는 규칙 세트 흐름을 구성하는 또 다른 방법입니다. 플로우차트에서 각 단계는 실행할 액션을 나타냅니다. 따라서 (상태도 상태와 달리) 컨텍스트 상태에 적용되면 다른 단계로 전환됩니다.
 
-::: {.cell .markdown}
-### Flowchart
-:::
+* 플로우차트 규칙:
 
-::: {.cell .markdown}
--   플로우차트는 규칙 세트 흐름을 구성하는 또 다른 방법입니다.
-    플로우차트에서 각 단계는 실행할 액션을 나타냅니다. 따라서 (상태도
-    상태와 달리) 컨텍스트 상태에 적용되면 다른 단계로 전환됩니다.
-
--   플로우차트 규칙:
-
-1.  플로우차트는 하나 이상의 단계를 가질 수 있습니다.
-2.  플로우차트에는 초기 단계가 필요합니다.
-3.  초기 단계는 들어오는 간선이 없는 정점으로 정의됩니다.
-4.  단계는 액션을 가질 수 있습니다.
-5.  단계는 0개 이상의 조건을 가질 수 있습니다.
-6.  조건에는 규칙과 목적지 단계가 있습니다.
-:::
-
-::: {.cell .code execution_count="1"}
+1. 플로우차트는 하나 이상의 단계를 가질 수 있습니다.
+2. 플로우차트에는 초기 단계가 필요합니다.
+3. 초기 단계는 들어오는 간선이 없는 정점으로 정의됩니다.
+4. 단계는 액션을 가질 수 있습니다.
+5. 단계는 0개 이상의 조건을 가질 수 있습니다.
+6. 조건에는 규칙과 목적지 단계가 있습니다.
 ``` python
 from durable.lang import *
 
@@ -1024,7 +714,8 @@ with flowchart('expense'):
         @run
         def denied(c):
             print('expense denied')
-
+```
+``` python
 # events for the default flowchart instance, approved after retry
 post('expense', { 'subject': 'approve', 'amount': 100 })
 # post('expense', { 'subject': 'retry' })
@@ -1038,34 +729,24 @@ post('expense', { 'subject': 'approve', 'amount': 100 })
 # post('expense', { 'sid': 2, 'subject': 'approve', 'amount': 10000})
 ```
 
-::: {.output .stream .stdout}
-    requesting approve
-:::
+</div>
+</details>
+<details>
+<summary>Timer</summary>
+<div markdown="1">
 
-::: {.output .execute_result execution_count="1"}
-    {'sid': '0', 'id': 'sid-0', '$s': 1, 'running': True}
-:::
-:::
-
-::: {.cell .markdown}
-#### Timer
-
--   이벤트는 타이머를 사용하여 예약할 수 있습니다.
--   시간 초과 조건은 규칙 전제에 포함될 수 있습니다.
--   기본적으로 타임아웃은 이벤트로 트리거됩니다 (한 번만 관찰됨).
--   \'수동 리셋\' 타이머에 의해 타임아웃은 사실로도 트리거될 수 있으며,
-    액션 실행 중 타이머를 리셋할 수 있습니다 (마지막 예제 참조).
-
-start_timer: 지정된 이름과 지속 시간으로 타이머를 시작합니다
-(manual_reset은 선택 사항입니다). reset_timer: \'수동 리셋\' 타이머를
-리셋합니다. cancel_timer: 진행 중인 타이머를 취소합니다. timeout: 전제
-조건으로 사용됩니다.
-:::
-
-::: {.cell .code execution_count="2"}
-``` python
+* 이벤트는 타이머를 사용하여 예약할 수 있습니다. 
+* 시간 초과 조건은 규칙 전제에 포함될 수 있습니다.
+* 기본적으로 타임아웃은 이벤트로 트리거됩니다 (한 번만 관찰됨).
+* '수동 리셋' 타이머에 의해 타임아웃은 사실로도 트리거될 수 있으며, 액션 실행 중 타이머를 리셋할 수 있습니다 (마지막 예제 참조).
+```
+start_timer: 지정된 이름과 지속 시간으로 타이머를 시작합니다 (manual_reset은 선택 사항입니다).
+reset_timer: '수동 리셋' 타이머를 리셋합니다.
+cancel_timer: 진행 중인 타이머를 취소합니다.
+timeout: 전제 조건으로 사용됩니다.
 from durable.lang import *
-
+```
+``` python
 with ruleset('timer'):
     
     @when_all(m.subject == 'start')
@@ -1078,21 +759,7 @@ with ruleset('timer'):
 
 post('timer', { 'subject': 'start' })
 ```
-
-::: {.output .execute_result execution_count="2"}
-    {'sid': '0', 'id': 'sid-0', '$s': 1}
-:::
-
-::: {.output .stream .stdout}
-    timer timeout
-:::
-:::
-
-::: {.cell .markdown}
--   아래 예제에서는 타이머를 사용하여 더 높은 이벤트 비율을 감지합니다.
-:::
-
-::: {.cell .code}
+* 아래 예제에서는 타이머를 사용하여 더 높은 이벤트 비율을 감지합니다.
 ``` python
 from durable.lang import *
 
@@ -1116,7 +783,8 @@ with statechart('risk'):
 
     state('fraud')
     state('exit')
-
+```
+``` python
 # three events in a row will trigger the fraud rule
 post('risk', { 'amount': 200 })
 post('risk', { 'amount': 300 })
@@ -1126,13 +794,8 @@ post('risk', { 'amount': 400 })
 post('risk', { 'sid': 1, 'amount': 500 })
 post('risk', { 'sid': 1, 'amount': 600 })
 ```
-:::
 
-::: {.cell .markdown}
--   이 예제에서는 속도를 측정하기 위해 수동 리셋 타이머를 사용합니다.
-:::
-
-::: {.cell .code}
+* 이 예제에서는 속도를 측정하기 위해 수동 리셋 타이머를 사용합니다.
 ``` python
 from durable.lang import *
 
@@ -1159,11 +822,20 @@ with statechart('risk'):
             print('velocity: no events in 5 seconds')
             c.reset_timer('VelocityTimer')
             c.start_timer('VelocityTimer', 5, True)
+```
 
+```
 post('risk', { 'amount': 200 })
 post('risk', { 'amount': 300 })
 post('risk', { 'amount': 50 })
 post('risk', { 'amount': 500 })
 post('risk', { 'amount': 600 })
 ```
-:::
+
+</div>
+</details>
+
+### 참고[¶]()
+
+- 산업인공지능개론 과목, 이건명 교수
+- https://github.com/jruizgit/rules

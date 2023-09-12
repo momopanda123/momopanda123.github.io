@@ -13,12 +13,15 @@ subtitle: 산업인공지능 개론 과목
 - 산업인공지능학과 대학원
     2022254026
         김홍열
+  
 ### Durable Rules 란?
 * 비즈니스 룰 엔진을 구현하기 위한 라이브러리로 python, ruby, nodejs로 구현할 수 있다.
+  
 ### Durable Rules 설치하기 (Python)
-``` plantext
+``` planetext
 pip install durable_rules
 ```
+
 ### Durable Rules Git
 [github - jruizgit/rules](https://github.com/jruizgit/rules)
 

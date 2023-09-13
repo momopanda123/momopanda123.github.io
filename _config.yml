@@ -25,7 +25,7 @@ navbar-links:
     - 01. ScreenShot OCR : "2023-09-08-screenshotOCR"
     - 02. Gabor Filter: ""
     - 03. SOM (SOFM): "2023-09-08-som"
-    - 04. Durable Rules: ""
+    - 04. Durable Rules: "2023-09-08-durable_rules_manual"
     - 05. Regression (Linear, Logistic): ""
     - 06. Decision Tree: ""
     - 07. Random Forest: ""
@@ -40,7 +40,7 @@ navbar-links:
     - 16. AutoEncoder: ""
     - 17. GAN (DCGAN, CycleGAN, StyleGAN): ""
     - 18. 지능화캡스톤 프로젝트 1. WDI-CNN: "2023-04-27-wdi_cnn"
-    - 19. 지능화캡스톤 프로젝트 2. YOLOv5: ""
+    - 19. 지능화캡스톤 프로젝트 2. YOLOv5: "2023-09-13-yolov5"
     - 20. 창의자율과제 프로젝트(Classification, Segmentation): ""
 
 #  Author's home: "aboutme"

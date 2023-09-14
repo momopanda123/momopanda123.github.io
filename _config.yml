@@ -27,7 +27,7 @@ navbar-links:
     - 03. SOM (SOFM): "2023-09-08-som"
     - 04. Durable Rules: "2023-09-08-durable_rules_manual"
     - 05. Regression (Linear, Logistic): ""
-    - 06. Decision Tree: ""
+    - 06. Decision Tree: "2023-09-14-decision_tree"
     - 07. Random Forest: ""
     - 08. SVM: ""
     - 09. K-NN (K-Nearest Neighbors): ""

@@ -1,3 +1,19 @@
+---
+layout: default
+title: 06. Decision Tree
+subtitle: 지능자동화실제 과목
+---
+-----
+
+[PINBlog Gitea Repository](https://gitea.pinblog.codes/CBNU/06_Decision_Tree)
+
+-----
+
+# 결정 트리(Decision Tree)
+- 산업인공지능학과 대학원
+    2022254026
+        김홍열
+
 # Decision Tree(결정 트리)이란?
 분류 및 회귀 문제에 사용되는 지도 학습 알고리즘 중 하나이다. 
 트리 구조를 사용하여 결정을 내리거나 값을 예측한다.

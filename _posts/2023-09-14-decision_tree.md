@@ -65,7 +65,7 @@ subtitle: 지능자동화실제 과목
 
 ---
 
-### 결정 트리 예제 코드[¶]()
+### 예제 코드 (Random Forest)[¶]()
 
 <details>
 <summary>Code View</summary>

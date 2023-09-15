@@ -82,11 +82,8 @@ plt.show()
 <details>
 <summary>Result</summary>
 
-
-![Result](/assets/img/seg1.png)
-
-
 <div markdown="1">
+![Result](/assets/img/seg1.png)
 </div>
 </details>
 
@@ -186,12 +183,9 @@ cv2.destroyAllWindows()
 <details>
 <summary>Result</summary>
 
-
+<div markdown="1">
 ![Result](/assets/img/seg2.png)
 ![Result](/assets/img/seg3.png)
-
-
-<div markdown="1">
 </div>
 </details>
 
@@ -317,14 +311,11 @@ cv2.destroyAllWindows()
 <details>
 <summary>Result</summary>
 
-
+<div markdown="1">
 ![Result](/assets/img/seg4.png)
 ![Result](/assets/img/seg5.png)
 ![Result](/assets/img/seg6.png)
 ![Result](/assets/img/seg7.png)
-
-
-<div markdown="1">
 </div>
 </details>
 

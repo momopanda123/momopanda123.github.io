@@ -23,7 +23,7 @@ subtitle: This is CBNU INDAI graduation project blog.
 - [04. Durable Rules](https://momopanda123.github.io/2023-09-08-durable_rules_manual/) 
 - [05. Regression (Linear, Logistic)](https://momopanda123.github.io/) 
 - [06. Decision Tree](https://momopanda123.github.io/2023-09-14-decision_tree/) 
-- [07. Feature Matching](https://momopanda123.github.io/) 
+- [07. Feature Matching](https://momopanda123.github.io/2023-09-15-feature-matching/) 
 - [08. SVM](https://momopanda123.github.io/) 
 - [09. K-NN (K-Nearest Neighbors)](https://momopanda123.github.io/) 
 - [10. Naive Bayes](https://momopanda123.github.io/) 

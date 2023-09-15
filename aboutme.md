@@ -25,7 +25,7 @@ subtitle: This is CBNU INDAI graduation project blog.
 - [06. Decision Tree](https://momopanda123.github.io/2023-09-14-decision_tree/) 
 - [07. Feature Matching](https://momopanda123.github.io/2023-09-15-feature-matching/) 
 - [08. SVM](https://momopanda123.github.io/2023-09-15-svm/) 
-- [09. K-NN (K-Nearest Neighbors)](https://momopanda123.github.io/) 
+- [09. K-NN (K-Nearest Neighbors)](https://momopanda123.github.io/2023-09-15-knn/) 
 - [10. Image Segmentation](https://momopanda123.github.io/) 
 - [11. Ensemble](https://momopanda123.github.io/2023-09-08-ensemble/) 
 - [12. VGGNet](https://momopanda123.github.io/) 

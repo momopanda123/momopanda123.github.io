@@ -9,7 +9,7 @@ subtitle: 산업비전의실제 과목
 
 -----
 
-# Image Segmentation
+# 10. Image Segmentation
 - 산업인공지능학과 대학원
     2022254026
         김홍열

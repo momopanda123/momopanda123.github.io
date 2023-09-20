@@ -9,7 +9,7 @@ subtitle: 지능자동화실제 과목
 
 -----
 
-# 결정 트리(Decision Tree)
+# 06. 결정 트리(Decision Tree)
 - 산업인공지능학과 대학원
     2022254026
         김홍열

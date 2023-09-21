@@ -26,7 +26,7 @@ navbar-links:
     - 02. Gabor Filter: ""
     - 03. SOM (SOFM): "2023-09-08-som"
     - 04. Durable Rules: "2023-09-08-durable_rules_manual"
-    - 05. Regression (Linear, Logistic): ""
+    - 05. Regression (Linear, Logistic): "2023-09-21-regression"
     - 06. Decision Tree: "2023-09-14-decision_tree"
     - 07. Feature Matching: "2023-09-15-feature-matching"
     - 08. SVM: "2023-09-15-svm"

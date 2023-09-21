@@ -21,7 +21,7 @@ subtitle: This is CBNU INDAI graduation project blog.
 - [02. Gabor Filter](https://momopanda123.github.io/) 
 - [03. SOM (SOFM)](https://momopanda123.github.io/2023-09-08-som) 
 - [04. Durable Rules](https://momopanda123.github.io/2023-09-08-durable_rules_manual/) 
-- [05. Regression (Linear, Logistic)](https://momopanda123.github.io/) 
+- [05. Regression (Linear, Logistic)](https://momopanda123.github.io/2023-09-21-regression/) 
 - [06. Decision Tree](https://momopanda123.github.io/2023-09-14-decision_tree/) 
 - [07. Feature Matching](https://momopanda123.github.io/2023-09-15-feature-matching/) 
 - [08. SVM](https://momopanda123.github.io/2023-09-15-svm/) 

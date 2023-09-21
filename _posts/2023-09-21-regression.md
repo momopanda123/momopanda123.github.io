@@ -20,6 +20,8 @@ subtitle: 어프렌티스 프로젝트 과목
 # *Regression*
 ### **Linear Regression, Logistic Regression**
 
+---
+
 # 선형 회귀 (Linear Regression)
 
 선형 회귀는 연속적인 값을 예측하기 위한 회귀 알고리즘입니다. 주로 종속 변수와 독립 변수 간의 선형 관계를 모델링하는 데 사용됩니다.
@@ -210,7 +212,7 @@ print("Intercept:", model.intercept_)
 
 <details>
 <summary>Code View</summary>
-
+<div markdown="1">
 
 ```python
 
@@ -236,10 +238,9 @@ y_pred = model.predict(X_test)
 acc = accuracy_score(y_test, y_pred)
 print(f"Accuracy: {acc*100:.2f}%")
 
-
 ```
 
-<div markdown="1">
+
 </div>
 </details>
 </div>

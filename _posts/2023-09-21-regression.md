@@ -136,6 +136,8 @@ print(f"Mean Squared Error: {mse:.2f}")
 </div>
 </details>
 
+---
+
 # 로지스틱 회귀 (Logistic Regression)
 로지스틱 회귀는 이름에 '회귀'가 들어가지만, 분류 문제에 사용되는 알고리즘입니다. 주로 이진 분류 문제에 사용되며, 확률을 출력으로 가집니다.
 

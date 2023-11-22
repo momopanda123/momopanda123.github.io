@@ -70,20 +70,15 @@ cv::getGaborKernel 함수는 OpenCV에서 가버필터(Gabor filter)를 생성�
 
 ---
 
-### 예제 코드[¶]()
+### 예제 웹페이지[¶]()
 
-<details>
-<summary>Import</summary>
+[Gabor Filter WebPage](https://gaborfilter.pinblog.codes/)
+
 <div markdown="1">
-  
-```python
 
-
-
-```
+<iframe src="https://gaborfilter.pinblog.codes/" width="600" height="400"></iframe>
 
 </div>
-</details>
 
 
 ---

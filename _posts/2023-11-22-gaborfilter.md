@@ -10,29 +10,29 @@ subtitle: Image Processing
 -----
 
 # Gabor Filter
-- »ê¾÷ÀÎ°øÁö´ÉÇÐ°ú ´ëÇÐ¿ø
+- ì‚°ì—…ì¸ê³µì§€ëŠ¥í•™ê³¼ ëŒ€í•™ì›
     2022254026
-        ±èÈ«¿­
+        ê¹€í™ì—´
 
 
 ---
 
-# **Gabor Filter¶õ?**
+# **Gabor Filterëž€?**
 
-Gabor Filter´Â ¿µ»óÃ³¸®¿¡¼­ Bio-inspired¶ó´Â Å°¿öµå°¡ ÀÖÀ¸¸é ºüÁöÁö¾Ê°í µîÀåÇÑ´Ù.
+Gabor FilterëŠ” ì˜ìƒì²˜ë¦¬ì—ì„œ Bio-inspiredë¼ëŠ” í‚¤ì›Œë“œê°€ ìžˆìœ¼ë©´ ë¹ ì§€ì§€ì•Šê³  ë“±ìž¥í•œë‹¤.
 
-¿Ü°û¼±À» °ËÃâÇÏ´Â ±â´ÉÀ» ÇÏ´Â ÇÊÅÍ·Î, »ç¶÷ÀÇ ½Ã°¢Ã¼°è°¡ ¹ÝÀÀÇÏ´Â °Í°ú ºñ½ÁÇÏ´Ù´Â ÀÌÀ¯·Î ³Î¸® »ç¿ëµÇ°í ÀÖ´Ù.
+ì™¸ê³½ì„ ì„ ê²€ì¶œí•˜ëŠ” ê¸°ëŠ¥ì„ í•˜ëŠ” í•„í„°ë¡œ, ì‚¬ëžŒì˜ ì‹œê°ì²´ê³„ê°€ ë°˜ì‘í•˜ëŠ” ê²ƒê³¼ ë¹„ìŠ·í•˜ë‹¤ëŠ” ì´ìœ ë¡œ ë„ë¦¬ ì‚¬ìš©ë˜ê³  ìžˆë‹¤.
 
-Gabor Fiter´Â °£´ÜÈ÷ ¸»ÇØ¼­ »çÀÎ ÇÔ¼ö·Î ¸ðµâ·¹ÀÌ¼Ç µÈ Gaussian Filter¶ó°í »ý°¢ÇÒ ¼ö ÀÖ´Ù.
+Gabor FiterëŠ” ê°„ë‹¨ížˆ ë§í•´ì„œ ì‚¬ì¸ í•¨ìˆ˜ë¡œ ëª¨ë“ˆë ˆì´ì…˜ ëœ Gaussian Filterë¼ê³  ìƒê°í•  ìˆ˜ ìžˆë‹¤.
 
-ÆÄ¶ó¹ÌÅÍ¸¦ Á¶ÀýÇÔ¿¡ µû¶ó EdgeÀÇ Å©±â³ª ¹æÇâ¼ºÀ» ¹Ù²Ü ¼ö ÀÖÀ¸¹Ç·Î Bio-inspired ¿µ»óÃ³¸® ¾Ë°í¸®Áò¿¡¼­ Æ¯Â¡Á¡ ÃßÃâ ¾Ë°í¸®ÁòÀ¸·Î ÇÙ½ÉÀûÀÎ ¿ªÇÒÀ» ÇÏ°í ÀÖ´Ù.
+íŒŒë¼ë¯¸í„°ë¥¼ ì¡°ì ˆí•¨ì— ë”°ë¼ Edgeì˜ í¬ê¸°ë‚˜ ë°©í–¥ì„±ì„ ë°”ê¿€ ìˆ˜ ìžˆìœ¼ë¯€ë¡œ Bio-inspired ì˜ìƒì²˜ë¦¬ ì•Œê³ ë¦¬ì¦˜ì—ì„œ íŠ¹ì§•ì  ì¶”ì¶œ ì•Œê³ ë¦¬ì¦˜ìœ¼ë¡œ í•µì‹¬ì ì¸ ì—­í• ì„ í•˜ê³  ìžˆë‹¤.
 
-2D Gabor FilterÀÇ ¼ö½ÄÀº ¾Æ·¡¿Í °°´Ù.
+2D Gabor Filterì˜ ìˆ˜ì‹ì€ ì•„ëž˜ì™€ ê°™ë‹¤.
 
 
-![gaborfilter](./images/gaborfilter.png)
-![gaborfilter](./images/gaborfilter2.png)
-![gaborfilter](./images/gaborfilter3.png)
+![gaborfilter](assets/img/gabor/gaborfilter.png)
+![gaborfilter](assets/img/gabor/gaborfilter2.png)
+![gaborfilter](assets/img/gabor/gaborfilter3.png)
 
 
 ```cpp
@@ -42,33 +42,33 @@ cv::Mat cv::getGaborKernel(cv::Size ksize, double sigma, double theta, double la
 
 ```
 
-cv::getGaborKernel ÇÔ¼ö´Â OpenCV¿¡¼­ °¡¹öÇÊÅÍ(Gabor filter)¸¦ »ý¼ºÇÏ´Â µ¥ »ç¿ëµÈ´Ù.
+cv::getGaborKernel í•¨ìˆ˜ëŠ” OpenCVì—ì„œ ê°€ë²„í•„í„°(Gabor filter)ë¥¼ ìƒì„±í•˜ëŠ” ë° ì‚¬ìš©ëœë‹¤.
 
-°¡¹öÇÊÅÍ´Â ÀÌ¹ÌÁö Ã³¸®¿Í ÄÄÇ»ÅÍ ºñÀü¿¡¼­ Æ¯Á¤ ¹æÇâ¼º°ú ÁÖÆÄ¼öÀÇ Æ¯Â¡À» °­Á¶ÇÏ´Â µ¥ »ç¿ëµÇ´Â ¼±Çü ÇÊÅÍÀÌ´Ù. 
+ê°€ë²„í•„í„°ëŠ” ì´ë¯¸ì§€ ì²˜ë¦¬ì™€ ì»´í“¨í„° ë¹„ì „ì—ì„œ íŠ¹ì • ë°©í–¥ì„±ê³¼ ì£¼íŒŒìˆ˜ì˜ íŠ¹ì§•ì„ ê°•ì¡°í•˜ëŠ” ë° ì‚¬ìš©ë˜ëŠ” ì„ í˜• í•„í„°ì´ë‹¤. 
 
 
 ### **Parameters**
 
-* ksize: Ä¿³ÎÀÇ Å©±â·Î, cv::Size Å¸ÀÔ. Ä¿³ÎÀÇ ³Êºñ¿Í ³ôÀÌ¸¦ ÁöÁ¤.
+* ksize: ì»¤ë„ì˜ í¬ê¸°ë¡œ, cv::Size íƒ€ìž…. ì»¤ë„ì˜ ë„ˆë¹„ì™€ ë†’ì´ë¥¼ ì§€ì •.
 
-* sigma: °¡¿ì½Ã¾È ÇÔ¼öÀÇ Ç¥ÁØ ÆíÂ÷. °ªÀÌ Ä¿Áú¼ö·Ï Ä¿³ÎÀÇ Å©±â°¡ Ä¿Áö°í, ÇÊÅÍÀÇ °¨µµ°¡ ³·¾ÆÁø´Ù.
+* sigma: ê°€ìš°ì‹œì•ˆ í•¨ìˆ˜ì˜ í‘œì¤€ íŽ¸ì°¨. ê°’ì´ ì»¤ì§ˆìˆ˜ë¡ ì»¤ë„ì˜ í¬ê¸°ê°€ ì»¤ì§€ê³ , í•„í„°ì˜ ê°ë„ê°€ ë‚®ì•„ì§„ë‹¤.
 
-* theta: ÇÊÅÍÀÇ ¹æÇâÀ» ¶óµð¾È ´ÜÀ§·Î ÁöÁ¤ÇÑ´Ù. 0Àº ¼öÆò ¹æÇâ, CV_PI/2´Â ¼öÁ÷ ¹æÇâÀ» ÀÇ¹ÌÇÑ´Ù.
+* theta: í•„í„°ì˜ ë°©í–¥ì„ ë¼ë””ì•ˆ ë‹¨ìœ„ë¡œ ì§€ì •í•œë‹¤. 0ì€ ìˆ˜í‰ ë°©í–¥, CV_PI/2ëŠ” ìˆ˜ì§ ë°©í–¥ì„ ì˜ë¯¸í•œë‹¤.
 
-* lambd: °¡¹öÇÊÅÍÀÇ ÆÄÀå. ÀÌ¹ÌÁöÀÇ Æ¯Á¤ ÆÐÅÏ°ú ¾ó¸¶³ª Àß ¸ÅÄ¡ÇÒÁö¸¦ °áÁ¤ÇÑ´Ù.
+* lambd: ê°€ë²„í•„í„°ì˜ íŒŒìž¥. ì´ë¯¸ì§€ì˜ íŠ¹ì • íŒ¨í„´ê³¼ ì–¼ë§ˆë‚˜ ìž˜ ë§¤ì¹˜í• ì§€ë¥¼ ê²°ì •í•œë‹¤.
 
-* gamma: °ø°£Á¾È¾ºñ(Spatial aspect ratio)·Î, Å¸¿øÇü °¡¹ö ÇÔ¼öÀÇ Å¸¿ø¼ºÀ» °áÁ¤ÇÑ´Ù. (gamma=1Àº ¿øÇü, gamma<1Àº Å¸¿øÇü)
+* gamma: ê³µê°„ì¢…íš¡ë¹„(Spatial aspect ratio)ë¡œ, íƒ€ì›í˜• ê°€ë²„ í•¨ìˆ˜ì˜ íƒ€ì›ì„±ì„ ê²°ì •í•œë‹¤. (gamma=1ì€ ì›í˜•, gamma<1ì€ íƒ€ì›í˜•)
 
-* psi: À§»óº¯À§(Phase offset)·Î, °¡¹ö ÇÊÅÍÀÇ À§»óÀ» Á¶ÀýÇÑ´Ù. (ÀÏ¹ÝÀûÀ¸·Î CV_PI*0.5°¡ ±âº»°ªÀ¸·Î »ç¿ë)
+* psi: ìœ„ìƒë³€ìœ„(Phase offset)ë¡œ, ê°€ë²„ í•„í„°ì˜ ìœ„ìƒì„ ì¡°ì ˆí•œë‹¤. (ì¼ë°˜ì ìœ¼ë¡œ CV_PI*0.5ê°€ ê¸°ë³¸ê°’ìœ¼ë¡œ ì‚¬ìš©)
 
-* ktype: Ä¿³Î Å¸ÀÔ. (º¸Åë CV_64F (64-ºñÆ® ºÎµ¿¼Ò¼öÁ¡)¸¦ »ç¿ë)
+* ktype: ì»¤ë„ íƒ€ìž…. (ë³´í†µ CV_64F (64-ë¹„íŠ¸ ë¶€ë™ì†Œìˆ˜ì )ë¥¼ ì‚¬ìš©)
 
 
 
 
 ---
 
-### ¿¹Á¦ ÄÚµå[¢Ò]()
+### ì˜ˆì œ ì½”ë“œ[Â¶]()
 
 <details>
 <summary>Import</summary>
@@ -86,7 +86,7 @@ cv::getGaborKernel ÇÔ¼ö´Â OpenCV¿¡¼­ °¡¹öÇÊÅÍ(Gabor filter)¸¦ »ý¼ºÇÏ´Â µ¥ »ç¿ëµÈ
 
 ---
 
-### Âü°í[¢Ò]()
+### ì°¸ê³ [Â¶]()
 
 - Gabor Filter - Google
 - ChatGPT

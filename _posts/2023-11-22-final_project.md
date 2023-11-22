@@ -144,7 +144,7 @@ plt.show()
 
 ```
 
-![output](./images/output1.png)
+![output](/assets/img/final/output1.png)
 
 </div>
 </details>
@@ -342,7 +342,7 @@ plt.show()
 
 ```
 
-![output](./images/output2.png)
+![output](/assets/img/final/output2.png)
 
 </div>
 </details>
@@ -961,7 +961,7 @@ plt.show()
 
 ```
 
-![output](./images/output3.png)
+![output](/assets/img/final/output3.png)
 
 </div>
 </details>
@@ -974,12 +974,12 @@ plt.show()
 <summary>Result</summary>
 <div markdown="1">
 
-![Confusion Matrix](./images/confusion_matrix.png)
-![F1-Curve](./images/F1_curve.png)
-![PR-Curve](./images/PR_curve.png)
-![Results](./images/results.png)
-![Train-Batch](./images/train_batch0.jpg)
-![Val-Batch](./images/val_batch0_pred.jpg)
+![Confusion Matrix](/assets/img/final/confusion_matrix.png)
+![F1-Curve](/assets/img/final/F1_curve.png)
+![PR-Curve](/assets/img/final/PR_curve.png)
+![Results](/assets/img/final/results.png)
+![Train-Batch](/assets/img/final/train_batch0.jpg)
+![Val-Batch](/assets/img/final/val_batch0_pred.jpg)
 
 </div>
 </details>

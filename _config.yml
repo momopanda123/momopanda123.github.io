@@ -23,7 +23,7 @@ navbar-links:
   About Me: "aboutme"
   Projects:
     - 01. ScreenShot OCR : "2023-09-08-screenshotOCR"
-    - 02. Gabor Filter: ""
+    - 02. Gabor Filter: "2023-11-22-gaborfilter"
     - 03. SOM (SOFM): "2023-09-08-som"
     - 04. Durable Rules: "2023-09-08-durable_rules_manual"
     - 05. Regression (Linear, Logistic): "2023-09-21-regression"

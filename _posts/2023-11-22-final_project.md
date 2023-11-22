@@ -1,11 +1,21 @@
-# 지능화 파일럿 프로젝트 - UNet으로 이차전지극판 영역분할
-
+---
+layout: default
+title: 20. 지능화 파일럿 프로젝트
+subtitle: Deep Learning
+---
 -----
-
 
 [PINBlog Gitea Repository](https://gitea.pinblog.codes/CBNU/20_Final_Project)
 
 -----
+
+# 지능화 파일럿 프로젝트 - UNet으로 이차전지극판 영역분할
+- 산업인공지능학과 대학원
+    2022254026
+        김홍열
+
+
+---
 
 ### UNet 논문
 [UNet](https://arxiv.org/pdf/1505.04597.pdf)

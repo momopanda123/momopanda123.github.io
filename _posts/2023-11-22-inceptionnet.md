@@ -768,9 +768,6 @@ train loss: 2.317668, val loss: 2.364337, accuracy: 10.96, time: 29.7933 min
 </div>
 </details>
 
-</div>
-</details>
-
 <details>
 <summary>Result</summary>
 <div markdown="1">

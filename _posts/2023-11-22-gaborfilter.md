@@ -30,9 +30,9 @@ Gabor Fiter는 간단히 말해서 사인 함수로 모듈레이션 된 Gaussian
 2D Gabor Filter의 수식은 아래와 같다.
 
 
-![gaborfilter](assets/img/gabor/gaborfilter.png)
-![gaborfilter](assets/img/gabor/gaborfilter2.png)
-![gaborfilter](assets/img/gabor/gaborfilter3.png)
+![gaborfilter](/assets/img/gabor/gaborfilter.png)
+![gaborfilter](/assets/img/gabor/gaborfilter2.png)
+![gaborfilter](/assets/img/gabor/gaborfilter3.png)
 
 
 ```cpp

@@ -20,7 +20,7 @@ subtitle: Deep Learning
 
 # **AutoEncoder 란**
 
-![autoencoder](./images/autoencoder.png)
+![autoencoder](/assets/img/autoencoder/autoencoder.png)
 
 지도학습은 단순히 말해 입력 x와 정답 y 사이의 관계를 찾는 것이고, 비지도 학습은 정답이 없는 채로 x를 예측하는 것이다.
 
@@ -35,7 +35,7 @@ subtitle: Deep Learning
 
 # **AutoEncoder** 아키텍처의 주요 특징
 
-![autoencoder](./images/autoencoder2.png)
+![autoencoder](/assets/img/autoencoder/autoencoder2.png)
 
 오토인코더는 입력과 출력의 크기는 같지만 중간으로 갈수록 신경망의 차원이 줄어든다.
 
@@ -53,7 +53,7 @@ subtitle: Deep Learning
 
 # 데이터셋 **(Fashion-MNIST)**
 
-![fation-mnist](./images/fashionmnist.jpg)
+![fation-mnist](/assets/img/autoencoder/fashionmnist.jpg)
 
 * Fashion-MNIST는 총 70,000개의 그레이스케일 이미지로 구성된다. 
 * 60,000개는 학습용 데이터, 10,000개는 테스트용 데이터 
@@ -319,10 +319,10 @@ for epoch in range(1, EPOCH+1):
 
 ```
 
-![fation-mnist](./images/output1.png.jpg)
-![fation-mnist](./images/output2.png.jpg)
-![fation-mnist](./images/output3.png.jpg)
-![fation-mnist](./images/output10.png.jpg)
+![fation-mnist](/assets/img/autoencoder/output1.png.jpg)
+![fation-mnist](/assets/img/autoencoder/output2.png.jpg)
+![fation-mnist](/assets/img/autoencoder/output3.png.jpg)
+![fation-mnist](/assets/img/autoencoder/output10.png.jpg)
 
 
 </div>

@@ -26,7 +26,7 @@ InceptionNet의 여러 버전 중 가장 널리 알려진 것은 Inception v1 (G
 
 # **Inception v1 (GoogLeNet)**
 
-![inceptionnet](./images/googlenet.png)
+![inceptionnet](/assets/img/inceptionnet/googlenet.png)
 
 * 개발 배경
 
@@ -47,7 +47,7 @@ InceptionNet의 여러 버전 중 가장 널리 알려진 것은 Inception v1 (G
 
 # **Inception v2**
 
-![inceptionnet](./images/inceptionnetv2.png)
+![inceptionnet](/assets/img/inceptionnet/inceptionnetv2.png)
 
 * 개선 사항
 
@@ -58,7 +58,7 @@ InceptionNet의 여러 버전 중 가장 널리 알려진 것은 Inception v1 (G
 
 # **Inception v3**
 
-![inceptionnet](./images/inceptionnetv3.png)
+![inceptionnet](/assets/img/inceptionnet/inceptionnetv3.png)
 
 * 개선 사항
 
@@ -69,7 +69,7 @@ InceptionNet의 여러 버전 중 가장 널리 알려진 것은 Inception v1 (G
 
 # **Inception v4**
 
-![inceptionnet](./images/inceptionnetv4.jpeg)
+![inceptionnet](/assets/img/inceptionnet/inceptionnetv4.jpeg)
 
 * 개발 배경
 
@@ -162,7 +162,7 @@ print(len(val_ds))
 
 ```
 
-![dataset](./images/dataset.png)
+![dataset](/assets/img/inceptionnet/dataset.png)
 
 </div>
 </details>
@@ -225,7 +225,7 @@ show(x_grid, y_grid)
 
 ```
 
-![output](./images/output1.png)
+![output](/assets/img/inceptionnet/output1.png)
 
 </div>
 </details>
@@ -806,8 +806,8 @@ plt.show()
 
 ```
 
-![output](./images/output2.png)
-![output](./images/output3.png)
+![output](/assets/img/inceptionnet/output2.png)
+![output](/assets/img/inceptionnet/output3.png)
 
 
 </div>
@@ -857,7 +857,7 @@ plt.show()
 
 ```
 
-![output](./images/output4.png)
+![output](/assets/img/inceptionnet/output4.png)
 
 </div>
 </details>

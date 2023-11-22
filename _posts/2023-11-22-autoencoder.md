@@ -317,10 +317,10 @@ for epoch in range(1, EPOCH+1):
 
 ```
 
-![fation-mnist](/assets/img/autoencoder/output1.png.jpg)
-![fation-mnist](/assets/img/autoencoder/output2.png.jpg)
-![fation-mnist](/assets/img/autoencoder/output3.png.jpg)
-![fation-mnist](/assets/img/autoencoder/output10.png.jpg)
+![fation-mnist](/assets/img/autoencoder/output1.png)
+![fation-mnist](/assets/img/autoencoder/output2.png)
+![fation-mnist](/assets/img/autoencoder/output3.png)
+![fation-mnist](/assets/img/autoencoder/output10.png)
 
 
 </div>

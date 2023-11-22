@@ -237,8 +237,6 @@ criterion = nn.MSELoss() #원본값과 디코더에서 나온 값의 차이를 �
 </div>
 </details>
 
-</div>
-</details>
 
 <details>
 <summary>Data Normalize</summary>

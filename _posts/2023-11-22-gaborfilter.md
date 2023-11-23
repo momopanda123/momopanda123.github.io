@@ -81,6 +81,9 @@ cv::getGaborKernel 함수는 OpenCV에서 가버필터(Gabor filter)를 생성�
   OpenCV 함수 대부분이 동작하지 않음
 * 따라서, Threshold, Gabor Filter, 2D Filter 함수를 직접 구현함
 
+![output1](/assets/img/gabor/output1.png)
+![output2](/assets/img/gabor/output2.png)
+
 ---
 
 ### 참고[¶]()

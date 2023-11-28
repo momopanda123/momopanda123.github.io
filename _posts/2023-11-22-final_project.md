@@ -984,12 +984,10 @@ plt.show()
 <summary>Result</summary>
 <div markdown="1">
 
-![Confusion Matrix](/assets/img/final/confusion_matrix.png)
-![F1-Curve](/assets/img/final/F1_curve.png)
-![PR-Curve](/assets/img/final/PR_curve.png)
-![Results](/assets/img/final/results.png)
-![Train-Batch](/assets/img/final/train_batch0.jpg)
-![Val-Batch](/assets/img/final/val_batch0_pred.jpg)
+![Confusion Matrix](/assets/img/final/confusionmatrix.png)
+![F1-Curve](/assets/img/final/f1score.png)
+![PR-Curve](/assets/img/final/prcurve.png)
+
 
 </div>
 </details>

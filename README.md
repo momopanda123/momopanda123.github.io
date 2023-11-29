@@ -4,6 +4,8 @@
 ![gammamon](./assets/img/gammamon.jpg)
 
 [Go to AI-EX Portfolio](https://momopanda123.github.io/)
+
+[Go to My Gitea Server](https://gitea.pinblog.codes/CBNU/)
 ---
 충북대학교 산업인공지능학과 대학원
 

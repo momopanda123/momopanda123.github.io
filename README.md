@@ -1,3 +1,15 @@
+---
+# AI-EX 포트폴리오 - Github.io Repository
+---
+[Go to AI-EX Portfolio](https://momopanda123.github.io/)
+---
+충북대학교 산업인공지능학과 대학원
+
+2022254026
+
+김홍열
+
+<!--
 [![](https://i.imgur.com/zNBkzj1.png)](https://beautifuljekyll.com/plans/)
 
 # Beautiful Jekyll
@@ -225,3 +237,4 @@ This template was not made *entirely* from scratch. I'd like to give special tha
 
 I'd also like to thank [Dr. Jekyll's Themes](https://drjekyllthemes.github.io/), [Jekyll Themes](http://jekyllthemes.org/), and another [Jekyll Themes](http://jekyllrc.github.io/jekyllthemes/) for featuring Beautiful Jekyll in their Jekyll theme directories.
 
+!-->

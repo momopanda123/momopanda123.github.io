@@ -1,6 +1,8 @@
 ---
 # AI-EX 포트폴리오 - Github.io Repository
 ---
+![gammamon](./assets/img/gammamon.jpg)
+
 [Go to AI-EX Portfolio](https://momopanda123.github.io/)
 ---
 충북대학교 산업인공지능학과 대학원

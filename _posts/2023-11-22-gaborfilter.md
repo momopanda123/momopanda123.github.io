@@ -74,12 +74,7 @@ cv::getGaborKernel 함수는 OpenCV에서 가버필터(Gabor filter)를 생성�
 
 [Gabor Filter WebPage](https://gaborfilter.pinblog.codes/)
 
-* Blazor-OpenCVSharp로 구현하여 개인 NAS 웹서버로 구동 중
-* OpenCVSharp-WASM이 불안정하여 실제 웹서버에서는 정상적으로 동작하지 않음
-* Local에서 Debug/Release로 빌드 시, 정상적으로 동작함
-* Fork한 원본 [OpenCV-Blazor-Sample](https://github.com/shimat/opencvsharp_blazor_sample/tree/main)이 실험적 프로젝트여서,
-  OpenCV 함수 대부분이 동작하지 않음
-* 따라서, Threshold, Gabor Filter, 2D Filter 함수를 직접 구현함
+* Blazor-OpenCVSharp로 구현하여 개인 NAS 웹서버로 구동 중 - Bug Fix !! ⭐⭐
 
 ![output1](/assets/img/gabor/output1.png)
 ![output2](/assets/img/gabor/output2.png)

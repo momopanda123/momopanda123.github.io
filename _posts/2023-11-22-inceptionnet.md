@@ -23,18 +23,17 @@ subtitle: Deep Learning
 이미지 인식 및 분류 작업을 위해 Google에서 개발된 딥러닝 아키텍처이다. 
 InceptionNet의 여러 버전 중 가장 널리 알려진 것은 Inception v1 (GoogLeNet), Inception v2, Inception v3, Inception v4 등이 있다.
 
-
 # **Inception v1 (GoogLeNet)**
 
 ![inceptionnet](/assets/img/inceptionnet/googlenet.png)
 
 * 개발 배경
 
-: 기존의 깊은 신경망이 컴퓨팅 자원과 과적합 문제를 겪는 것에 대한 해결책으로 개발되었다.
+기존의 깊은 신경망이 컴퓨팅 자원 문제와 과적합 문제를 겪는 것에 대한 해결책으로 개발되었다.
 
 * 특징
 
-: 'Inception 모듈'이라고 불리는 빌딩 블록을 사용한다. 
+'Inception 모듈'이라고 불리는 빌딩 블록을 사용한다. 
 
 이 모듈은 서로 다른 크기의 컨볼루션 필터들(1x1, 3x3, 5x5)과 맥스 풀링을 병렬적으로 적용하고 결과를 결합한다. 
 
@@ -42,8 +41,11 @@ InceptionNet의 여러 버전 중 가장 널리 알려진 것은 Inception v1 (G
 
 * 성과
 
-: 2014년 ILSVRC (ImageNet Large Scale Visual Recognition Challenge)에서 우승했다.
+2014년 ILSVRC (ImageNet Large Scale Visual Recognition Challenge)에서 우승했다.
 
+* 추가 정보
+
+GoogLeNet이라는 이름은 LeNet에서 영감을 받았으며, 22개 층으로 구성되어 있다.
 
 # **Inception v2**
 
@@ -51,10 +53,13 @@ InceptionNet의 여러 버전 중 가장 널리 알려진 것은 Inception v1 (G
 
 * 개선 사항
 
-: Inception v1의 아이디어를 확장하여, 2D 컨볼루션 연산을 더 효율적으로 수행하는 방법이 제안되었다.
+Inception v1의 아이디어를 확장하여, 2D 컨볼루션 연산을 더 효율적으로 수행하는 방법이 제안되었다.
 
 큰 컨볼루션 필터(예: 5x5)를 여러 개의 작은 필터(예: 3x3)로 분해하여 연산 효율성을 개선했다.
 
+* 추가 정보
+
+배치 정규화(Batch Normalization)를 도입하여 내부 공변량 이동(Internal Covariate Shift) 문제를 해결하고 학습 속도를 개선했다.
 
 # **Inception v3**
 
@@ -62,10 +67,13 @@ InceptionNet의 여러 버전 중 가장 널리 알려진 것은 Inception v1 (G
 
 * 개선 사항
 
-: 더욱 정교한 Inception 모듈을 사용하고, 학습과정을 안정화하는 방법을 도입했다. 
+더욱 정교한 Inception 모듈을 사용하고, 학습 과정을 안정화하는 방법을 도입했다. 
 
 5x5 컨볼루션을 두 개의 3x3 컨볼루션으로 대체하고, RMSProp 옵티마이저, 라벨 스무딩, 배치 정규화 등을 사용하여 성능을 향상시켰다.
 
+* 추가 정보
+
+비대칭 컨볼루션(예: nx1 followed by 1xn)을 도입하여 파라미터 수를 줄이고 계산 효율성을 높였다.
 
 # **Inception v4**
 
@@ -73,15 +81,20 @@ InceptionNet의 여러 버전 중 가장 널리 알려진 것은 Inception v1 (G
 
 * 개발 배경
 
-: Inception 아키텍처와 ResNet 아키텍처의 아이디어를 결합했다.
+Inception 아키텍처와 ResNet 아키텍처의 아이디어를 결합했다.
 
 * 특징
 
-: Inception-ResNet이라고도 불리며, Inception 모듈에 잔차 연결(Residual Connections)을 추가하여 네트워크를 더 깊게 만들면서도 학습을 안정화하였다.
+Inception-ResNet이라고도 불리며, Inception 모듈에 잔차 연결(Residual Connections)을 추가하여 네트워크를 더 깊게 만들면서도 학습을 안정화하였다.
+
+* 추가 정보
+
+Inception-ResNet-v2는 Inception v4와 함께 소개되었으며, 더 적은 파라미터로 유사하거나 더 나은 성능을 보여주었다.
 
 InceptionNet은 다양한 크기의 컨볼루션 필터와 풀링 레이어를 병렬로 적용함으로써 이미지의 다양한 특징을 효과적으로 추출할 수 있으며, 
-
 네트워크가 깊어짐에 따라 발생할 수 있는 과적합 문제와 학습의 어려움을 극복하기 위한 여러 기술을 적용한다.
+
+결론적으로, InceptionNet 시리즈는 컴퓨터 비전 분야에서 중요한 발전을 이루었으며, 효율적인 네트워크 설계와 성능 향상을 위한 다양한 기법을 소개했다.
 
 
 ---
